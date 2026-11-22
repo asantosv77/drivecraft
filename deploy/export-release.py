@@ -6,7 +6,7 @@ import argparse, datetime, hashlib, io, json, tarfile
 DEPLOY = Path(__file__).resolve().parent
 ROOT = DEPLOY.parent
 EXCLUDE = {'config.php', 'check_ini.php', 'check_albums.php', 'fix.php', 'recover.php', 'test-php-limits.php', 'setup_admin.php'}
-DEPLOY_FILES = ['Dockerfile','Dockerfile.dockerignore','docker-compose.yaml','.env.example','config.local.php','apache.conf','php.ini','prepare-image.php','bootstrap.php','entrypoint.sh','worker-loop.php','health.php','Install.ps1','Instalar.cmd','install.sh','schema.json','export-release.py','export-schema.php','repository.gitignore','repository.gitattributes','README.md','TESTS.md']
+DEPLOY_FILES = ['Dockerfile','Dockerfile.dockerignore','docker-compose.yaml','.env.example','config.local.php','apache.conf','php.ini','prepare-image.php','bootstrap.php','entrypoint.sh','worker-loop.php','health.php','Install.ps1','Instalar.cmd','install.sh','schema.json','export-release.py','export-schema.php','repository.gitignore','repository.gitattributes','README.md','README.en.md','TESTS.md','TESTS.en.md']
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -34,7 +34,12 @@ def main():
         files['deploy/'+name] = f
     files['.gitignore'] = DEPLOY/'repository.gitignore'
     files['.gitattributes'] = DEPLOY/'repository.gitattributes'
-    files['README.md'] = DEPLOY/'README.md'
+    files['README.md'] = ROOT/'README.md' if (ROOT/'README.md').is_file() else DEPLOY/'README.md'
+    if (ROOT/'README.en.md').is_file():
+        files['README.en.md'] = ROOT/'README.en.md'
+    for f in sorted((ROOT/'docs').rglob('*')):
+        if f.is_file() and not f.is_symlink() and f.suffix in {'.md','.png','.jpg','.webp'}:
+            files[f.relative_to(ROOT).as_posix()] = f
     if (ROOT/'LICENSE').is_file():
         files['LICENSE'] = ROOT/'LICENSE'
     tables = json.loads((DEPLOY/'schema.json').read_text(encoding='utf-8'))

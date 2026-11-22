@@ -1,5 +1,7 @@
 # Drivecraft · instalación local
 
+[Español](README.md) · [English](README.en.md) · [Presentación del proyecto](../README.md)
+
 Drivecraft es una aplicación web de gestión de archivos con carpetas, álbumes de fotos, bibliotecas musicales, colecciones de video, notas Markdown y permisos por usuario. Esta distribución instala únicamente Drivecraft: no incluye datos de la instalación de desarrollo ni otros proyectos del autor.
 
 ## Requisitos
@@ -59,7 +61,7 @@ Los volúmenes son propios de cada nombre de despliegue: `storage` conserva arch
 - MariaDB y creación automática del esquema completo vacío. No se importa ningún registro de usuarios, ajustes, enlaces públicos, sesiones o archivos.
 - Supervisor de tareas integrado: importaciones de audio/video, vistas previas, conversiones y mantenimiento de servicios externos. **No hay que añadir crons al anfitrión.**
 - Selector español/inglés y funciones actuales de la aplicación.
-- Sin Nginx, Let’s Encrypt, dominio obligatorio, red Docker externa ni montajes de rutas de la Raspberry del desarrollador. Tampoco Docker CLI/socket, servicios Kindle o Sparrow-Fy dentro de la imagen.
+- Sin Nginx, Let’s Encrypt, dominio obligatorio, red Docker externa ni montajes de rutas de la Raspberry del desarrollador. Tampoco Docker CLI/socket ni servicios de otros proyectos dentro de la imagen.
 
 El acceso local utiliza **HTTP**. Los enlaces compartidos y de recepción usan el esquema y puerto de la URL abierta en el navegador. Para publicar la aplicación en Internet, configura HTTPS en tu infraestructura y `DC_COOKIE_SECURE=1` en `.env`; este paquete no despliega certificados ni proxy público. Funciones del navegador que exijan un contexto seguro pueden requerir HTTPS fuera de `localhost`.
 

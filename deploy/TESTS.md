@@ -1,5 +1,7 @@
 # Verificación del despliegue limpio
 
+Español · [English](TESTS.en.md)
+
 Verificado el 21 de noviembre de 2026 con Docker Desktop, contenedores Linux x86_64 y volúmenes desechables independientes.
 
 - Construcción completa de la imagen PHP, Imagick, FFmpeg, yt-dlp y Deno: correcta.
