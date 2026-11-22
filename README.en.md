@@ -87,3 +87,13 @@ Created and maintained by **Armando Santos Villalobos**. Development uses AI too
 ## License
 
 Original code is released under the [MIT license](LICENSE). Third-party dependencies and resources retain their own licenses and notices. Screenshots do not distribute the media files they display.
+
+## A personal note on vibe coding
+
+For those who prefer a more traditional approach to programming: yes, Drivecraft was built mostly through **vibe coding**. I say that openly, without dismissing the work involved: there was considerable research, testing, review and auditing, within the scope and limitations documented in this repository. AI helped write code; turning ideas into something useful still required decisions, verification and many iterations.
+
+Above all, this is a project for my own personal use. It did not begin with a fixed design: needs and changes emerged as the idea took shape. Without vibe coding, I probably would not have been able to bring it this far. It now has a foundation I feel comfortable sharing, even though there is still plenty to improve.
+
+You are welcome to take it, modify it and pursue a different direction under the MIT license. If your changes could improve my version, I would love to hear about them: share a fork, open an issue or submit a pull request. **Sharing improvements is an invitation, not an additional license requirement.**
+
+And if someone with time, experience and plenty of Claude tokens—or whichever tool they prefer—wants to rebuild it from scratch and make something better, please do. Do not hesitate to invite me to try your project: I would be happy to see how far this idea can go in other hands.

@@ -87,3 +87,13 @@ Creado y mantenido por **Armando Santos Villalobos**. El proyecto se desarrolla 
 ## Licencia
 
 Código propio bajo [licencia MIT](LICENSE). Las dependencias y recursos de terceros conservan sus licencias y avisos. Las capturas no distribuyen los archivos multimedia que muestran.
+
+## Una nota personal sobre el vibe coding
+
+Para quienes prefieren una forma más tradicional de programar: sí, Drivecraft se hizo mayormente con **vibe coding**. Lo digo con transparencia y sin restarle mérito al trabajo: detrás hubo mucha investigación, pruebas, revisiones y auditorías, con los alcances y límites que se documentan en este repositorio. La IA ayudó a escribir código; convertir las ideas en algo útil requirió decisiones, comprobaciones y muchas iteraciones.
+
+Ante todo, este es un proyecto para mi uso personal. No partió de un diseño cerrado: las necesidades y los cambios fueron surgiendo conforme tomaba forma la idea. Sin el vibe coding, probablemente no habría sido posible llevarlo hasta aquí. Hoy ya tiene una base que me siento cómodo compartiendo, aunque todavía quede mucho por mejorar.
+
+Puedes tomarlo, modificarlo y llevarlo por otro camino bajo la licencia MIT. Si haces cambios que puedan mejorar mi versión, me encantará conocerlos: comparte un fork, abre un issue o envía un pull request. **Compartir las mejoras es una invitación, no una obligación adicional a la licencia.**
+
+Y si alguien con tiempo, experiencia y muchos tokens en Claude —o en la herramienta que prefiera— quiere rehacerlo por completo y obtener algo mejor, adelante. No dudes en invitarme a probar tu proyecto: me dará gusto ver hasta dónde puede llegar esta idea en otras manos.
