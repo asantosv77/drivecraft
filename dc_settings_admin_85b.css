@@ -1,0 +1,4 @@
+/* Drive-Craft v20.10.85b: accesos administrativos en Configuración */
+.dc85b-admin-tools{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.dc85b-admin-tools button{width:100%;min-height:37px;padding:9px 12px;box-sizing:border-box;text-align:left;border:1px solid var(--border-color,#475569);border-radius:8px;background:var(--panel-bg,#26354b);color:inherit;cursor:pointer}
+.dc85b-admin-tools button:hover,.dc85b-admin-tools button:focus-visible{border-color:var(--primary-color,#38bdf8);filter:brightness(1.12)}

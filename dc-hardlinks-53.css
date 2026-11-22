@@ -1,0 +1,7 @@
+/* v20.10.53: compactación proporcionada del panel de hardlinks. */
+#dcHardlinksForm .dc-check-list {gap: 6px !important;}
+#dcHardlinksForm .dc-hl-row49 {margin:0 !important; padding:0 !important; min-height:0 !important;gap:8px !important;align-items:center !important;}
+#dcHardlinksForm .dc-hl-row49 .dc-check-row {min-height:31px !important;padding:5px 10px !important;}
+#dcHardlinksForm .dc-hl-row49 input[type=number] {box-sizing:border-box !important;width:9ch !important;min-width:9ch !important;max-width:9ch !important;min-height:30px !important;height:30px !important;padding:3px 6px !important;}
+#dcHardlinksForm .dc-hl-row49 .dc-hl-min49 {min-width:9ch !important;width:9ch !important;max-width:9ch !important;}
+#dcHardlinksForm .dc-admin-card h5 {margin-bottom:8px !important;}

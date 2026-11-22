@@ -1,0 +1,19 @@
+/* v20.10.41: espacio reservado para feedback, boton inmovil */
+.dc-copy-feedback{display:inline-flex;min-width:6.6em;width:6.6em;flex:0 0 6.6em;align-items:center;font-size:.79rem;font-weight:650;color:#4ade80;white-space:nowrap}
+.managed-share-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;column-gap:8px;row-gap:7px}
+.managed-share-actions button{flex-shrink:0;color:var(--text-color,#e5e7eb)!important}
+.dc-receive-link-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.dc-receive-link-row input{flex:1 1 180px;min-width:0}
+.dc-receive-link-row button{flex:0 0 auto;white-space:nowrap}
+/* La transparencia se aplica a TODO el panel; los items interiores conservan contraste. */
+#dcUploadQueue.dc-upload-queue{background:rgba(26,36,54,.67)!important;backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important;overflow-x:hidden!important}
+#dcUploadQueue .dc-upload-head,#dcUploadQueue .dc-upload-items{background:transparent!important;overflow-x:hidden!important;min-width:0!important}
+#dcUploadQueue .dc-upload-row{background:rgba(52,68,93,.53)!important;min-width:0!important;max-width:100%!important;box-sizing:border-box!important;overflow:hidden!important}
+#dcUploadQueue .dc-upload-line,#dcUploadQueue .dc-upload-name{min-width:0!important;overflow-wrap:anywhere}
+#dcUploadQueue .dc-upload-fade{transform:translateY(-4px)!important;opacity:0!important}
+#dcUploadQueue progress{max-width:100%;box-sizing:border-box}
+/* No usar el layout de tres columnas forzado para TODOS los permisos. */
+#dcUtilityModal:has(#dcUserEditor) #dcEditUser{grid-template-columns:repeat(2,minmax(0,1fr))!important;align-items:start!important}
+#dcUtilityModal:has(#dcUserEditor) button{color:var(--text-color,#e5e7eb)!important}
+#dcUtilityModal:has(#dcUserEditor) button.share-danger{color:#f87171!important}
+@media(max-width:700px){#dcUtilityModal:has(#dcUserEditor) #dcEditUser{grid-template-columns:minmax(0,1fr)!important}}

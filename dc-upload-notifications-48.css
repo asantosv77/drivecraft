@@ -1,0 +1,39 @@
+/* v20.10.48: avisos flotantes individuales, sin ventana con scrollbars. */
+#dcUploadQueue.dc-upload-queue {
+ position:fixed !important;right:18px !important;bottom:18px !important;
+ width:min(380px,calc(100vw - 36px)) !important;
+ height:auto !important;min-height:0 !important;max-height:none !important;
+ display:block !important;overflow:visible !important;
+ background:transparent !important;border:0 !important;border-radius:0 !important;
+ box-shadow:none !important;backdrop-filter:none !important;-webkit-backdrop-filter:none !important;
+ pointer-events:none;z-index:11000;
+}
+#dcUploadQueue .dc-upload-head {display:none !important}
+#dcUploadQueue #dcUploadItems {
+ display:flex !important;flex-direction:column !important;align-items:stretch !important;
+ justify-content:flex-end !important;gap:0 !important;
+ width:100% !important;height:auto !important;min-height:0 !important;
+ max-height:none !important;padding:0 !important;margin:0 !important;
+ overflow:visible !important;scrollbar-width:none !important;
+}
+#dcUploadQueue #dcUploadItems::-webkit-scrollbar {display:none !important}
+#dcUploadQueue .dc-upload-row {
+ width:100% !important;min-width:0 !important;box-sizing:border-box !important;
+ margin:0 !important;padding:11px 12px !important;position:relative !important;
+ pointer-events:auto !important;
+ background:rgba(25,37,56,.94) !important;color:#f4f7fc !important;
+ border:1px solid rgba(153,181,216,.5) !important;border-radius:10px !important;
+ box-shadow:0 7px 22px rgba(0,0,0,.35) !important;
+ backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+ transition:opacity .5s,transform .5s,margin-top .18s ease !important;
+}
+#dcUploadQueue .dc-upload-row + .dc-upload-row {margin-top:var(--dc-stack-gap,7px) !important}
+#dcUploadQueue .dc-upload-row:hover,#dcUploadQueue .dc-upload-row:focus-within {z-index:50 !important}
+#dcUploadQueue:hover .dc-upload-row + .dc-upload-row {margin-top:var(--dc-stack-gap,7px) !important}
+#dcUploadQueue .dc-upload-name {overflow-wrap:anywhere;min-width:0}
+#dcUploadQueue .dc-upload-error {border-color:#f17b85 !important;background:rgba(72,28,42,.97) !important}
+#dcUploadQueue .dc-upload-completed {border-color:#58ae8a !important}
+#dcUploadQueue .dc-upload-dismiss {width:29px;height:29px;flex-shrink:0}
+#dcUploadQueue .dc-upload-fade {opacity:0 !important;transform:translateX(30px) !important}
+@media(max-width:600px){#dcUploadQueue.dc-upload-queue{right:10px !important;bottom:calc(10px + env(safe-area-inset-bottom,0px)) !important;}}
+@media(prefers-reduced-motion:reduce){#dcUploadQueue .dc-upload-row{transition:none !important}}

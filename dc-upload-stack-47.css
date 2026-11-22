@@ -1,0 +1,74 @@
+/* Drive-Craft v20.10.47: cola como baraja, sin alterar las transferencias. */
+#dcUploadQueue.dc-upload-queue {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: min(75dvh, 650px) !important;
+  width: min(380px, calc(100vw - 24px));
+  overflow: hidden !important;
+  background: rgba(29, 41, 60, .88) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+#dcUploadQueue .dc-upload-head {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 30;
+  background: rgba(29, 41, 60, .92);
+}
+#dcUploadQueue #dcUploadItems {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: min(62dvh, 540px) !important;
+  padding: 10px !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none;
+}
+#dcUploadQueue #dcUploadItems::-webkit-scrollbar { display: none !important; }
+#dcUploadQueue .dc-upload-row {
+  position: relative;
+  flex: 0 0 auto;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 9px 10px;
+  background: var(--bg-color, #172033);
+  box-shadow: 0 2px 7px rgba(0,0,0,.18);
+  transition: margin-top .2s ease, box-shadow .2s ease, opacity .5s, transform .5s;
+}
+#dcUploadQueue .dc-upload-row + .dc-upload-row { margin-top: -48px !important; }
+#dcUploadQueue .dc-upload-row:hover,
+#dcUploadQueue .dc-upload-row:focus-within {
+  z-index: 25 !important;
+  box-shadow: 0 9px 24px rgba(0,0,0,.4);
+}
+/* Al interactuar, se despliega la lista para leer nombres y progreso completos. */
+#dcUploadQueue:hover .dc-upload-row + .dc-upload-row,
+#dcUploadQueue:focus-within .dc-upload-row + .dc-upload-row {
+  margin-top: 8px !important;
+}
+#dcUploadQueue .dc-upload-line, #dcUploadQueue .dc-upload-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+#dcUploadQueue.dc-upload-minimized #dcUploadItems { display: none !important; }
+/* Sin hover disponible: mostrar las tarjetas desplegadas para poder usar sus botones. */
+@media (hover: none) {
+  #dcUploadQueue .dc-upload-row + .dc-upload-row { margin-top: 8px !important; }
+  #dcUploadQueue { max-height: min(66dvh, 550px) !important; }
+}
+@media (max-width:600px) {
+  #dcUploadQueue.dc-upload-queue { right: 10px; bottom: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #dcUploadQueue .dc-upload-row { transition: none; }
+}

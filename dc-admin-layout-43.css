@@ -1,0 +1,58 @@
+/* Drive-Craft 20.10.43 — disposición del editor inspirada en el boceto del usuario.
+   Intervención exclusivamente visual; no cambia permisos, datos ni endpoints. */
+#dcUtilityModal.dc-admin-open:not(.dc-admin-narrow) .dc-utility-modal {
+  width:min(1060px,94vw)!important;
+  max-width:1060px!important;
+  box-sizing:border-box;
+}
+#dcUserEditor {margin-top:14px}
+#dcUserEditor #dcEditUser {gap:10px; margin-top:8px}
+#dcUserEditor .dc-admin-sections {
+  display:grid;
+  grid-template-columns:minmax(0,0.88fr) minmax(0,1.12fr);
+  align-items:start;
+  gap:22px;
+}
+#dcUserEditor .dc-admin-sections > .dc-admin-card {
+  min-width:0;
+  background:transparent;
+  border:0;
+  padding:2px 0;
+}
+#dcUserEditor .dc-admin-sections .dc-admin-two-col {
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:10px;
+}
+#dcUserEditor .dc-admin-stack-field {gap:5px;min-width:0;font-weight:600}
+#dcUserEditor .dc-admin-stack-field > input,
+#dcUserEditor .dc-admin-stack-field > select {min-height:40px;width:100%;}
+#dcUserEditor .dc-admin-stack-field > span:has(input[type=number]) {min-width:0;max-width:100%;}
+#dcUserEditor .dc-admin-card h5 {margin:0 0 10px;font-size:1rem}
+#dcUserEditor #dcEditUser > .dc-admin-card {
+  padding:10px 0 2px;
+  border:0;
+  border-top:1px solid var(--border-color);
+  border-radius:0;
+  background:transparent;
+}
+#dcUserEditor #dcEditUser > .dc-admin-card .dc-check-list {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:12px;
+  row-gap:8px;
+}
+#dcUserEditor .dc-check-row {
+  min-height:38px;
+  padding:7px 10px;
+  grid-template-columns:minmax(0,1fr) 20px;
+  align-items:center;
+}
+#dcUserEditor .dc-admin-actions {justify-content:flex-end;margin-top:2px}
+#dcUserEditor .dc-admin-note {line-height:1.35;font-size:.82rem}
+@media(max-width:760px){
+  #dcUserEditor .dc-admin-sections{grid-template-columns:minmax(0,1fr);gap:14px}
+  #dcUserEditor #dcEditUser > .dc-admin-card .dc-check-list{grid-template-columns:minmax(0,1fr)}
+  #dcUserEditor .dc-admin-actions{justify-content:stretch}
+  #dcUserEditor .dc-admin-actions button{flex:1 1 140px}
+}

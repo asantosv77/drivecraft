@@ -1,0 +1,9 @@
+/* Separar preferencias de tarjetas sin alterar el resto de Presentación */
+#dcYouTubeSettings54{padding:8px 0!important;border:0!important;background:transparent!important}
+.dc-yt55-trigger,.dc-yt55-dialog button{border-radius:8px;padding:8px 13px;background:#e8eef8;color:#172338;border:1px solid #9db1cc;cursor:pointer}
+.dc-yt55-shade{position:fixed;inset:0;background:#0009;display:grid;place-items:center;padding:16px;z-index:2147483000}
+.dc-yt55-dialog{width:min(520px,100%);max-height:calc(100dvh - 32px);overflow:auto;background:#1e293b;color:#eaf0ff;border:1px solid #52627b;border-radius:14px;padding:20px 22px;box-sizing:border-box;box-shadow:0 16px 44px #0008}
+.dc-yt55-head,.dc-yt55-top,.dc-yt55-foot{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.dc-yt55-head h3{font-size:1.1rem;margin:0}.dc-yt55-head button{background:transparent;color:inherit;border:0;font-size:24px}
+.dc-yt55-dialog p{font-size:.9rem;opacity:.85}.dc-yt55-row{margin:18px 0 22px}.dc-yt55-row input{display:block;width:100%;accent-color:#1da6ef;margin:12px 0 0}
+.dc-yt55-top output{white-space:nowrap;font-variant-numeric:tabular-nums}.dc-yt55-foot{justify-content:flex-end}

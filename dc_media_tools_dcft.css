@@ -1,0 +1,33 @@
+.dcmt-scope{display:flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap}.dcmt-scope input{width:auto;margin:0}.dcmt-scope[hidden]{display:none}
+.dcmt-overlay{position:fixed;inset:0;background:#0009;display:flex;align-items:center;justify-content:center;z-index:2147480000;padding:16px;box-sizing:border-box}
+.dcmt-pane{width:min(720px,95vw);max-height:90dvh;overflow:auto;background:var(--card-bg,#1e293b);color:var(--text-color,#e5e7eb);border:1px solid var(--border-color,#64748b);border-radius:14px;padding:20px;box-sizing:border-box;box-shadow:0 20px 80px #0007}
+.dcmt-head,.dcmt-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.dcmt-head h3{margin:0}.dcmt-pane label{display:block;margin:14px 0 6px}.dcmt-pane input,.dcmt-pane select{box-sizing:border-box;width:100%;padding:9px;border-radius:6px;background:var(--bg-color,#0f172a);color:inherit;border:1px solid var(--border-color,#64748b)}
+.dcmt-pane button,.dcmt-mini{padding:8px 12px;border-radius:7px;cursor:pointer;border:1px solid var(--border-color,#64748b);background:var(--hover-bg,#26354b);color:inherit}.dcmt-pane button:disabled{opacity:.5;cursor:default}.dcmt-pane .btn-primary{background:#0284c7;color:#fff}.dcmt-actions{justify-content:flex-end;margin-top:14px}
+.dcmt-status{font-size:13px;line-height:1.5;overflow-wrap:anywhere;min-height:1.5em}.dcmt-result{display:flex;gap:12px;align-items:center;width:100%;text-align:left;margin:8px 0}.dcmt-result img{width:120px;aspect-ratio:16/9;object-fit:cover;border-radius:5px}.dcmt-result span{min-width:0}.dcmt-result small{display:block;opacity:.75}
+.dcmt-loading{animation:dcmt-pulse 1.2s ease-in-out infinite;background:linear-gradient(90deg,transparent,#7c879a40,transparent);min-height:45px;border-radius:6px}
+.dcmt-ring{display:grid;place-items:center;position:relative;width:190px;height:190px;margin:20px auto}.dcmt-ring svg{width:100%;height:100%;transform:rotate(-90deg)}.dcmt-ring circle{fill:none;stroke-width:8;stroke:#64748b45}.dcmt-ring .dcmt-total{stroke:#38bdf8;transition:stroke-dashoffset .5s}.dcmt-ring .dcmt-download{stroke:#dfc16f;transition:stroke-dashoffset .5s}.dcmt-ring strong{position:absolute;font-size:24px}.dcmt-mini{position:fixed;bottom:20px;right:20px;z-index:15999;background:var(--card-bg,#1e293b);color:var(--text-color,#fff);box-shadow:0 4px 20px #0005}.dcmt-job-list{max-height:150px;overflow:auto}.dcmt-job-list button{display:block;width:100%;text-align:left;margin:4px 0}
+.dcmt-playback-hint{font-size:12px;opacity:.85;padding:5px 0}.dcmt-pane p{line-height:1.5}
+@keyframes dcmt-pulse{50%{opacity:.4}}@media(prefers-reduced-motion:reduce){.dcmt-loading{animation:none}}
+
+.dcmt-pane label.dcmt-check{display:flex;align-items:flex-start;gap:8px;font-weight:normal}.dcmt-pane label.dcmt-check input{width:auto;flex:none;margin:3px 0 0}.dcmt-pane button{margin:3px}.dcmt-pane textarea{background:var(--bg-color,#0f172a);color:inherit;border:1px solid var(--border-color,#64748b);padding:8px;border-radius:6px}
+
+/* External-services settings use horizontal space; other media dialogs stay unchanged. */
+.dcmt-pane.dcmt-external-pane{width:min(1180px,calc(100vw - 32px));max-height:calc(100dvh - 28px);padding:16px;display:flex;flex-direction:column;overflow:hidden}
+.dcmt-external-pane>.dcmt-head{flex:none;margin-bottom:12px}.dcmt-external-pane>.dcmt-head button{margin:0}
+.dcmt-external-body{min-height:0;overflow:auto;display:flex;flex-direction:column;gap:12px}
+.dcmt-external-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:stretch}
+.dcmt-external-card{min-width:0;border:1px solid var(--border-color,#64748b);border-radius:9px;padding:12px;background:var(--bg-color,#0f172a)}
+.dcmt-external-card h4{margin:0 0 10px;font-size:15px}.dcmt-external-card h5{margin:14px 0 6px;font-size:13px}
+.dcmt-external-card label{font-size:13px;margin:8px 0 4px;line-height:1.35}.dcmt-external-card input,.dcmt-external-card select{padding:7px 8px;min-width:0;font-size:13px;margin-top:4px;height:34px}
+.dcmt-external-card label.dcmt-check input{height:auto;margin-top:3px;padding:0}
+.dcmt-external-card p{font-size:12px;line-height:1.4;margin:8px 0}
+.dcmt-external-card button{font-size:12px;padding:7px 9px;margin:4px 0}
+.dcmt-external-maintenance>button{display:block;width:100%}
+.dcmt-external-review{display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid var(--border-color,#64748b);border-radius:8px;padding:10px 12px;font-size:12px}
+.dcmt-external-review>div{min-width:0;flex:1}.dcmt-external-review strong,.dcmt-external-review small{display:block;line-height:1.4}.dcmt-external-review button{flex:none;font-size:12px;margin:0}
+.dcmt-external-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:10px;border-top:1px solid var(--border-color,#64748b)}
+.dcmt-external-footer>.dcmt-status{flex:1;min-width:0;margin:0;font-size:12px}.dcmt-external-footer>button{flex:none;margin:0;min-width:180px}
+.dcmt-external-document{width:min(1000px,95vw)}.dcmt-external-document pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.6 ui-monospace,Consolas,monospace}
+@media(max-height:740px) and (min-width:1051px){.dcmt-pane.dcmt-external-pane{padding:12px}.dcmt-external-pane>.dcmt-head{margin-bottom:9px}.dcmt-external-body{gap:9px}.dcmt-external-grid{gap:9px}.dcmt-external-card{padding:10px}.dcmt-external-card label{font-size:12px;margin-top:7px}.dcmt-external-card p{margin:6px 0}.dcmt-external-card h4{font-size:14px;margin-bottom:8px}}
+@media(max-width:1050px) and (min-width:701px){.dcmt-external-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dcmt-external-maintenance{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:14px}.dcmt-external-maintenance h4{grid-column:1/-1}.dcmt-external-maintenance p{margin-top:4px}.dcmt-external-maintenance>button{width:auto}}
+@media(max-width:700px){.dcmt-external-grid{grid-template-columns:1fr}.dcmt-external-review,.dcmt-external-footer{align-items:stretch;flex-direction:column;gap:8px}.dcmt-external-footer>button{min-width:0;width:100%}}

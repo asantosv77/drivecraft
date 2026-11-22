@@ -1,0 +1,23 @@
+/* v20.10.60: dos columnas independientes; el modal principal ya no se desplaza. */
+#shareManagerModal{padding:12px;box-sizing:border-box;overflow:hidden}
+#shareManagerModal .share-manager-modal{
+  width:min(1200px,calc(100vw - 24px))!important;max-width:none!important;
+  height:min(790px,calc(100dvh - 24px));max-height:calc(100dvh - 24px)!important;
+  margin:0 auto!important;box-sizing:border-box;
+  display:flex;flex-direction:column;overflow:hidden!important;
+}
+#shareManagerModal .dc-share-columns60{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;min-height:0;flex:1;overflow:hidden}
+#shareManagerModal .dc-share-column60{min-width:0;min-height:0;display:flex;flex-direction:column;border:1px solid var(--border-color);border-radius:10px;padding:12px;background:var(--bg-color);overflow:hidden}
+#shareManagerModal .dc-share-column60 h4{margin:0 0 10px}
+#shareManagerModal .dc-share-column60 .share-manager-list{flex:1;min-height:0;max-height:none!important;overflow-y:auto;overflow-x:hidden;align-content:start;scrollbar-gutter:stable}
+#shareManagerModal .dc-share-column60 .share-search{flex-shrink:0}
+#shareManagerModal .dc-share-toolbar60{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+#shareManagerModal .dc-share-toolbar60 h4{margin:0}
+#dcRevokeAll60{background:transparent;color:#ec868c;border:1px solid #c96068;border-radius:7px;padding:7px 10px;cursor:pointer}
+#dcRevokeAll60:disabled{opacity:.5;cursor:not-allowed}
+#shareManagerModal .managed-share-url a{overflow-wrap:anywhere}
+@media(max-width:740px){
+ #shareManagerModal .share-manager-modal{height:calc(100dvh - 24px)}
+ #shareManagerModal .dc-share-columns60{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) minmax(0,1fr)}
+ #shareManagerModal .dc-share-column60{padding:8px}
+}

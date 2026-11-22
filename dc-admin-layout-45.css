@@ -1,0 +1,66 @@
+/* Drive-Craft v20.10.45 - compactación del editor de usuarios */
+#dcUserEditor h4{margin:2px 0 8px;font-size:1rem}
+#dcUserEditor #dcEditUser{gap:10px}
+#dcUserEditor .dc-user-core-card,
+#dcUserEditor #dcEditUser>.dc-admin-card{
+  padding:10px 12px !important;
+}
+#dcUserEditor .dc-user-core-card .dc-admin-two-col{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:10px !important;
+  align-items:end;
+}
+#dcUserEditor .dc-admin-stack-field{
+  gap:3px !important;
+  font-weight:500;
+}
+#dcUserEditor .dc-admin-stack-field input:not([type=checkbox]),
+#dcUserEditor .dc-admin-stack-field select,
+#dcUtilityModal.dc-admin-open .dc-admin-inline-form input,
+#dcUtilityModal.dc-admin-open .dc-admin-inline-form select{
+  min-height:32px !important;
+  padding:5px 9px !important;
+  border-radius:8px;
+}
+#dcUserEditor .dc-admin-stack-field > span:has(input[type=number]){
+  gap:6px !important;
+}
+#dcUserEditor .dc-admin-stack-field > span:has(input[type=number]) select{
+  flex:0 0 72px !important;
+  width:72px !important;
+}
+#dcUserEditor .dc-admin-stack-field .dc-help{
+  margin-left:3px;
+  font-size:.92em;
+}
+#dcUserEditor .dc-admin-note{
+  margin:6px 0 0 !important;
+  line-height:1.3;
+  font-size:.79rem;
+}
+#dcUserEditor #dcEditUser > .dc-admin-card .dc-check-list{
+  gap:7px 10px;
+}
+#dcUserEditor .dc-check-row,
+#dcUtilityModal.dc-admin-open .dc-check-row{
+  min-height:32px !important;
+  padding:6px 10px !important;
+}
+#dcUserEditor .dc-check-row input[type=checkbox],
+#dcUtilityModal.dc-admin-open .dc-check-row input[type=checkbox]{
+  width:16px;height:16px;
+}
+#dcUtilityModal.dc-admin-open .dc-admin-toolbar button,
+#dcUtilityModal.dc-admin-open .dc-admin-actions button,
+#dcUtilityModal.dc-admin-open .dc-admin-inline-form button,
+#dcUtilityModal.dc-admin-open .dc-admin-actions-inline button{
+  min-height:30px !important;
+  padding:5px 10px !important;
+  border-radius:8px;
+}
+#dcUserEditor .dc-admin-actions{margin-top:2px}
+#dcUserEditor .dc-admin-actions button{min-width:118px}
+@media(max-width:760px){
+  #dcUserEditor .dc-user-core-card .dc-admin-two-col{grid-template-columns:minmax(0,1fr) !important;}
+}

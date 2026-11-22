@@ -1,0 +1,20 @@
+/* Stable link colors, including visited links; no global override of existing share cards. */
+#dcUtilityModal a[href^="dc_storage_diagnostic.php"],
+#receiveLinksList .dc-utility-row a,
+#dcReceiveResult a,
+.dc-receive-result a{
+ display:inline-flex;align-items:center;gap:6px;max-width:100%;box-sizing:border-box;
+ color:var(--primary-color,#5367d9);background:var(--hover-bg,rgba(83,103,217,.09));
+ border:1px solid var(--border-color,#64748b);border-radius:7px;
+ padding:6px 9px;margin-top:5px;font-size:13px;font-weight:600;line-height:1.4;
+ text-decoration:none;overflow-wrap:anywhere;word-break:break-word;white-space:normal;
+ transition:background-color .15s,border-color .15s;
+}
+#dcUtilityModal a[href^="dc_storage_diagnostic.php"]:visited,
+#receiveLinksList .dc-utility-row a:visited,
+#dcReceiveResult a:visited,.dc-receive-result a:visited{color:var(--primary-color,#5367d9)}
+#dcUtilityModal a[href^="dc_storage_diagnostic.php"]:hover,
+#receiveLinksList .dc-utility-row a:hover{background:var(--hover-bg,rgba(83,103,217,.17));border-color:var(--primary-color,#5367d9);text-decoration:underline;text-underline-offset:3px}
+#dcUtilityModal a[href^="dc_storage_diagnostic.php"]:focus-visible,
+#receiveLinksList .dc-utility-row a:focus-visible{outline:2px solid var(--primary-color,#5367d9);outline-offset:3px}
+#receiveLinksList .dc-utility-row>span{min-width:0;flex:1}

@@ -1,0 +1,19 @@
+.dc-favorite-mark57{position:absolute;top:0;right:0;z-index:3;font-size:15px;filter:drop-shadow(0 1px 2px #0007)}.dc-version-visual,.dc-tree-icon-wrap{position:relative}.dc-text57-top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 0 12px}.dc-text57-buttons{display:flex;gap:8px}.dc-text57-top button,.dc-text57-top select{padding:6px 13px;border-radius:8px}.dc-text57-area{display:block;width:100%;min-height:46vh;resize:vertical;box-sizing:border-box;font-family:monospace;tab-size:4;white-space:pre}.dc-text57-code{white-space:pre-wrap;overflow:auto;max-height:60vh}
+/* DC85: editor con resaltado visible mientras se escribe, tema oscuro */
+.dc-edit85-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;width:100%;min-width:0}
+.dc-edit85-wrap.dc-edit85-markdown{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.dc-edit85-source{position:relative;min-width:0;height:52vh;overflow:hidden;background:#10151e;border:1px solid #3a4559;border-radius:9px}
+.dc-edit85-highlight,.dc-edit85-input{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;margin:0!important;padding:12px!important;box-sizing:border-box!important;border:0!important;border-radius:0!important;font:13px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace!important;letter-spacing:normal!important;tab-size:4!important;white-space:pre!important;overflow:auto!important;overflow-wrap:normal!important;word-break:normal!important}
+.dc-edit85-highlight{pointer-events:none;color:#d4d9e5;background:transparent;z-index:0}
+.dc-edit85-input{z-index:1;background:transparent!important;color:transparent!important;-webkit-text-fill-color:transparent!important;caret-color:#f3f5ff!important;resize:none!important}
+.dc-edit85-input::selection{background:rgba(77,137,212,.42);-webkit-text-fill-color:transparent}
+.dc-edit85-input:focus{outline:1px solid #739acb;outline-offset:-1px}
+.dc-edit85-preview{height:52vh;overflow:auto;box-sizing:border-box;border:1px solid #3a4559;border-radius:9px;padding:14px!important}
+@media(max-width:740px){.dc-edit85-wrap.dc-edit85-markdown{grid-template-columns:1fr}.dc-edit85-source,.dc-edit85-preview{height:38vh}}
+
+.dc-art-page .dc-art-caption-action{min-height:32px;box-sizing:border-box} .dc-art-turn-face .dc-art-caption-action{visibility:visible!important;opacity:1!important}
+
+.dc-floating85{position:fixed;right:18px;bottom:18px;width:min(400px,90vw);z-index:230000;border:1px solid #50637d;border-radius:11px;overflow:hidden;background:#1b2639;color:#ecf3ff;box-shadow:0 12px 50px #000b}
+.dc-floating85-bar,.dc-floating85-controls{display:flex;align-items:center;gap:7px;padding:8px 11px;background:#202e43}.dc-floating85-bar{cursor:move;touch-action:none;user-select:none}.dc-floating85-bar strong{font-size:12px}.dc-floating85-spacer{flex:1}.dc-floating85 button{border:1px solid #52657e;border-radius:6px;background:#2c3c54;color:#f1f5ff;cursor:pointer;padding:4px 9px}.dc-floating85-controls{justify-content:center}.dc-floating85-content video{display:block!important;width:100%!important;max-width:100%!important;max-height:230px!important;height:auto!important;margin:0!important;background:black}
+
+.dc-edit85-highlight code{font:inherit!important;white-space:inherit!important;}

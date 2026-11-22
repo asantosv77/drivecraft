@@ -1,0 +1,94 @@
+/* Iconos especiales de carpetas. La cuadrícula conserva la presentación original. */
+.file-item{position:relative}
+.dc-folder-type{position:absolute;inset:20px 14px auto;display:flex;align-items:center;justify-content:center;height:76px;z-index:1;pointer-events:none}
+.dc-folder-type svg{width:65px;height:48px;filter:drop-shadow(0 2px 3px #0004)}
+.dc-folder-album img{width:78px;height:65px;object-fit:cover;border-radius:6px;box-shadow:0 2px 8px #0005}
+.dc-folder-mark{position:absolute;right:-2px;bottom:-7px;font-size:19px;filter:drop-shadow(0 1px 2px #0008)}
+.dc-tree-icon-wrap{position:relative}.dc-tree-type{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--sidebar-bg,#151e2d);z-index:2}
+.dc-tree-type svg{height:18px;width:24px}.dc-tree-type img{width:24px;height:20px;object-fit:cover;border-radius:3px}
+.dc-tree-folder-mark{font-size:9px;position:absolute;right:-5px;bottom:-4px}
+/* Lista, móvil y escritorio: sustituir visualmente el icono original,
+   manteniendo intactos el DOM original y los eventos del explorador. */
+.file-view-list .file-item.dc-special-folder-list > .dc-version-visual,
+.file-view-list .file-item.dc-special-folder-list > .file-icon {display:none !important}
+.file-view-list .file-item.dc-special-folder-list > .dc-folder-type {
+ position:relative !important;inset:auto !important;display:inline-flex !important;
+ align-items:center;justify-content:center;
+ width:30px !important;height:32px !important;min-width:30px;min-height:32px;
+ flex:0 0 30px;margin:0 12px 0 0 !important;padding:0;
+ z-index:1;overflow:visible;pointer-events:none;
+ font-size:18px;line-height:1;
+}
+.file-view-list .file-item.dc-special-folder-list > .dc-folder-youtube svg {
+ display:block;width:28px !important;height:22px !important;filter:none;
+}
+.file-view-list .file-item.dc-special-folder-list > .dc-folder-album img {
+ display:block;width:28px !important;height:28px !important;max-width:28px;
+ object-fit:cover;border-radius:4px;box-shadow:0 1px 3px #0005;
+}
+.file-view-list .file-item.dc-special-folder-list .dc-folder-mark {
+ right:-4px;bottom:-3px;font-size:11px;line-height:1;
+}
+
+/* DC85d: iconos coherentes para bibliotecas musicales y álbumes fotográficos. */
+.dc-folder-music img.dc-folder-art85d,.dc-folder-photo img.dc-folder-art85d {width:76px;height:76px;max-width:100%;object-fit:contain;display:block;filter:drop-shadow(0 2px 3px #0003);box-shadow:none;border-radius:0}
+.dc-tree-music img.dc-folder-art85d,.dc-tree-photo img.dc-folder-art85d {width:24px;height:20px;object-fit:contain;display:block;border-radius:0}
+.file-view-list .file-item.dc-special-folder-list > .dc-folder-music img.dc-folder-art85d,
+.file-view-list .file-item.dc-special-folder-list > .dc-folder-photo img.dc-folder-art85d {width:30px !important;height:30px !important;max-width:30px;object-fit:contain;box-shadow:none;border-radius:0}
+/* La imagen reemplaza visualmente al emoji del icono tradicional. */
+.file-item:has(> .dc-folder-music) .dc-version-visual,
+.file-item:has(> .dc-folder-photo) .dc-version-visual {visibility:hidden}
+
+/* DC85e: iconos compactos con CSS puro para árbol y vista de lista. */
+.dc-tree-icon-wrap:has(> .dc-tree-music),.dc-tree-icon-wrap:has(> .dc-tree-photo){
+ display:inline-flex;position:relative;width:24px;height:23px;flex:0 0 24px;
+ align-items:center;justify-content:center;font-size:0;opacity:1;
+}
+.dc-tree-music,.dc-tree-photo{position:absolute;inset:0;background:transparent!important;z-index:2}
+.dc-compact85e{display:block;position:relative;width:100%;height:100%;aspect-ratio:1;flex:none;pointer-events:none}
+.dc-compact-tab85e{position:absolute;left:13%;top:24%;width:39%;height:18%;background:#d7ab5b;border:1px solid #a87d44;border-bottom:0;border-radius:4px 4px 0 0}
+.dc-compact-folder85e{position:absolute;inset:34% 9% 9%;background:linear-gradient(160deg,#ffdfa0 0%,#ecc16a 100%);border:1px solid #af7e43;border-radius:4px;box-shadow:0 1px 2px #0005}
+.dc-compact-band85e{position:absolute;left:16%;top:6%;width:68%;height:51%;border:3px solid #333c49;border-bottom:0;border-radius:55% 55% 0 0}
+.dc-compact-ear85e{position:absolute;top:38%;width:17%;height:34%;background:#303640;border:1px solid #151b21;border-radius:4px;box-shadow:inset 2px 0 2px #56606b}
+.dc-ear-left85e{left:3%}.dc-ear-right85e{right:3%}
+.dc-compact-face85e{position:absolute;left:42%;top:43%;width:17%;height:12%;border-bottom:2px solid #4c3325;border-radius:0 0 50% 50%}
+.dc-compact-face85e:before,.dc-compact-face85e:after{content:'';position:absolute;top:-40%;width:2px;height:2px;border-radius:50%;background:#4c3325}
+.dc-compact-face85e:before{left:-4px}.dc-compact-face85e:after{right:-4px}
+.dc-compact-photo85e{position:absolute;width:31%;height:49%;top:17%;border:2px solid #fff;background:linear-gradient(155deg,#69c4e9 38%,#588f79 40%,#4b8056);box-shadow:0 1px 2px #0007;transform:rotate(-8deg)}
+.dc-photo-085e{left:12%;top:17%;transform:rotate(-12deg);z-index:3;background:linear-gradient(160deg,#7dbbe2 45%,#e8b173 46%)}
+.dc-photo-185e{left:37%;top:26%;transform:rotate(9deg);z-index:2;background:linear-gradient(150deg,#f6cb98 40%,#8b9ab2 41%)}
+.dc-photo-285e{right:10%;top:13%;transform:rotate(13deg);z-index:1}
+.dc-tree-type .dc-compact85e{width:24px;height:23px}
+.file-view-list .file-item.dc-special-folder-list > .dc-folder-music .dc-compact85e,
+.file-view-list .file-item.dc-special-folder-list > .dc-folder-photo .dc-compact85e{width:28px;height:28px}
+.file-view-list .file-item.dc-special-folder-list > .dc-folder-music,
+.file-view-list .file-item.dc-special-folder-list > .dc-folder-photo{overflow:visible}
+
+/* DC85f: icono de audífonos de alto contraste. Solo árbol/lista. */
+[data-theme="dark"] .dc-compact-band85e{border-color:#fff;filter:drop-shadow(0 0 1px #101827)}
+[data-theme="dark"] .dc-compact-ear85e{background:#fff;border-color:#e2e8f0;box-shadow:inset 2px 0 2px #cbd5e1}
+[data-theme="light"] .dc-compact-band85e{border-color:#172c4b;filter:none}
+[data-theme="light"] .dc-compact-ear85e{background:#172c4b;border-color:#0f2038;box-shadow:inset 2px 0 1px #567298}
+.dc-tree-music .dc-compact-face85e,.file-view-list .dc-compact-face85e{display:none}
+
+/* Existing cached photos fill the three CSS polaroid frames at any zoom level. */
+.dc-compact-photo85e{overflow:hidden}
+.dc-compact-photo85e>img.dc-album-frame-photo{position:absolute;inset:0;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;border:0!important;border-radius:0!important;padding:0!important;margin:0!important;box-shadow:none!important;filter:none!important;display:block}
+
+/* Slightly larger inset photo frames; keep the folder silhouette unchanged. */
+.dc-compact-folder85e>.dc-compact-photo85e{width:35%;height:55%}
+
+/* DC85g: al pasar el cursor las tres fotos crecen 5x dentro de su marco y flotan sobre el icono. */
+.dc-compact-photo85e{transition:scale .18s cubic-bezier(.2,.8,.2,1),translate .18s cubic-bezier(.2,.8,.2,1),rotate .18s ease,border-width .18s ease}
+.file-view-grid .file-item:has(> .dc-folder-type > .dc-compact85e.dc-album-hover),
+.file-view-list .file-item:has(> .dc-folder-type > .dc-compact85e.dc-album-hover){z-index:60}
+.file-view-grid .file-item:has(.dc-folder-photo) > .dc-folder-type:has(> .dc-compact85e.dc-album-hover),
+.file-view-list .file-item:has(.dc-folder-photo) > .dc-folder-type:has(> .dc-compact85e.dc-album-hover){z-index:60}
+.dc-compact85e.dc-album-hover{overflow:visible}
+.dc-compact85e.dc-album-hover .dc-compact-photo85e{scale:5;z-index:20;pointer-events:auto;box-shadow:0 2px 6px #0009;border-width:.4px}
+.dc-compact85e.dc-album-hover .dc-photo-085e{translate:-30px -14px;rotate:-6deg;z-index:23}
+.dc-compact85e.dc-album-hover .dc-photo-185e{translate:0 8px;rotate:2deg;z-index:22}
+.dc-compact85e.dc-album-hover .dc-photo-285e{translate:30px -18px;rotate:8deg;z-index:21}
+/* Grosor visual fijo: 2px en el icono y 0.4px x 5 = 2px al ampliar. Segundo hover: 0.24px x 5 = 1.2px (-40%). */
+.dc-compact85e.dc-album-hover .dc-compact-photo85e:hover{z-index:30;border-width:.24px}
+@media(prefers-reduced-motion:reduce){.dc-compact-photo85e{transition:none}}

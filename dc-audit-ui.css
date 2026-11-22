@@ -1,0 +1,7 @@
+/* Papelera con aspecto de explorador, conservando las funciones de restauración */
+.dc-trash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-top:14px}
+.dc-trash-card{border:1px solid var(--border-color,#ddd);border-radius:12px;padding:15px;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0}
+.dc-trash-icon{font-size:38px}.dc-trash-card strong{max-width:100%;overflow-wrap:anywhere;text-align:center;font-size:13px}
+.dc-trash-card small{opacity:.75;text-align:center;font-size:11px}
+.dc-trash-card>div:last-child{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:auto}
+.dc-trash-card button{cursor:pointer}

@@ -1,0 +1,25 @@
+/* Drive-Craft v20.10.39 — capa visual incremental y accesible */
+#dcUtilityModal .dc-admin-editor,#dcUserEditor .dc-admin-editor{display:grid;gap:12px;max-width:100%;min-width:0}
+#dcUtilityModal .dc-admin-editor>label,#dcUserEditor .dc-admin-editor>label{display:grid;gap:6px;min-width:0;font-weight:600}
+#dcUtilityModal .dc-admin-editor input:not([type=checkbox]),#dcUtilityModal .dc-admin-editor select,
+#dcUserEditor .dc-admin-editor input:not([type=checkbox]),#dcUserEditor .dc-admin-editor select{
+ width:100%;min-width:0;max-width:100%;box-sizing:border-box;padding:10px 12px;border-radius:9px;
+ border:1px solid var(--border-color,#718096);background:var(--card-bg,var(--bg-color,#fff));color:var(--text-color,#17202d);font:inherit
+}
+#dcUtilityModal .dc-admin-editor label:has(input[type=checkbox]),#dcUserEditor .dc-admin-editor label:has(input[type=checkbox]){display:flex;align-items:center;gap:9px}
+#dcUtilityModal .dc-admin-editor button,#dcUserEditor .dc-admin-editor button,#dcCopySharedUrl{
+ border-radius:10px;padding:10px 14px;min-height:42px;cursor:pointer;font-weight:600;border:1px solid var(--border-color,#718096);
+}
+#dcUtilityModal .dc-admin-editor button:focus-visible,#dcUserEditor .dc-admin-editor button:focus-visible,#dcCopySharedUrl:focus-visible{outline:3px solid var(--primary-color,#3899fa);outline-offset:2px}
+.dc-admin-note{margin:0;padding:10px 12px;border:1px solid var(--border-color,#718096);border-radius:10px;line-height:1.5;color:var(--text-color,#17202d)}
+#shareModal a,#shareManagerModal a,#activeSharesList a,#shareManagerList a{color:#1454a8;text-decoration:underline;text-underline-offset:2px}
+#shareModal a:visited,#shareManagerModal a:visited,#activeSharesList a:visited,#shareManagerList a:visited{color:#6535a3}
+[data-theme=dark] #shareModal a,[data-theme=dark] #shareManagerModal a,[data-theme=dark] #activeSharesList a,[data-theme=dark] #shareManagerList a{color:#9dd5ff}
+[data-theme=dark] #shareModal a:visited,[data-theme=dark] #shareManagerModal a:visited,[data-theme=dark] #activeSharesList a:visited,[data-theme=dark] #shareManagerList a:visited{color:#d4b1ff}
+#dcCopySharedUrl{margin-left:8px}
+/* Respeta los recortes/áreas seguras de iPhone sin desplazar toda la página */
+@media(max-width:768px){
+ .main-buttons{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 12px)}
+ #shareModal .modal-content,#shareManagerModal .modal-content{box-sizing:border-box;max-width:calc(100vw - 18px);overflow-x:auto}
+ #dcCopySharedUrl{margin:8px 0 0;max-width:100%}
+}

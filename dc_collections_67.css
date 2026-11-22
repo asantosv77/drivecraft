@@ -1,0 +1,125 @@
+/* Tarjeta de colección en el directorio padre; no altera menús/contextos */
+.file-item.dc-collection-folder67{min-height:280px;position:relative}
+.dc-collection-folder67 .dc-collection-poster67{width:100%;aspect-ratio:16/9;border-radius:9px;overflow:hidden;background:linear-gradient(135deg,#25324a,#151b2a);display:flex;align-items:center;justify-content:center;color:#dde9f4;font-size:36px}
+.dc-collection-folder67 .dc-collection-poster67 img{width:100%;height:100%;object-fit:cover}
+.dc-collection-folder67 .dc-collection-ui67{min-width:0;width:100%;display:flex;flex-direction:column;gap:6px}
+.dc-collection-folder67 .dc-collection-ui67 .dc-collection-label67{font-size:13px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dc-collection-folder67 .dc-collection-ui67 select{width:100%;min-width:0;border-radius:6px;padding:5px;background:var(--card-bg,var(--panel-bg,#263346));color:var(--text-color,inherit);border:1px solid var(--border-color,#768395)}
+.dc-collection-folder67 .dc-collection-actions67{display:flex;gap:5px;flex-wrap:wrap}
+.dc-collection-folder67 .dc-collection-actions67 button{border:1px solid var(--border-color,#748098);border-radius:7px;padding:5px 7px;background:var(--panel-bg,#27364b);color:var(--text-color,#fafafa);cursor:pointer;font-size:12px}
+.dc-collection-folder67 .dc-collection-progress67{height:5px;width:100%;background:rgba(128,128,128,.26);border-radius:10px;overflow:hidden}
+.dc-collection-folder67 .dc-collection-progress67 div{height:100%;background:#2aa4bd}
+.dc-collection-folder67 .dc-collection-meta67{font-size:11px;opacity:.7}
+.dc-v67-restart{display:block;margin:9px auto;border:1px solid var(--border-color,#8090a5);border-radius:7px;background:var(--panel-bg,#27364b);color:var(--text-color,#fafafa);padding:7px 12px;cursor:pointer}
+
+/* v20.10.68: tarjetas de colección coherentes con los videos de YouTube */
+#dcyGrid .dc-collection-media68{display:flex;flex-direction:column;gap:9px;min-height:0;width:auto;max-width:none;overflow:visible;isolation:isolate}
+#dcyGrid .dc-collection-media68 .dc-collection-poster67{width:100%;aspect-ratio:16/9;flex:none}
+#dcyGrid .dc-collection-media68 .dc-collection-ui67{width:100%;flex:1;gap:8px}
+#dcyGrid .dc-collection-media68 .dc-collection-actions67{position:relative}
+#dcyGrid .dc-collection-media68 .dc-collection-label67{font-size:13px;white-space:normal;overflow-wrap:anywhere}
+#dcyGrid .dc-collection-media68 .dc-version-visual{display:none}
+.dc-collection-folder67 .dc-collection-actions67{position:relative}
+.dc-collection-folder67 .dc-collection-menu68{position:absolute;right:0;top:100%;display:flex;flex-direction:column;padding:5px;background:#19263b;color:#fff;border:1px solid #6b7e9a;border-radius:8px;min-width:125px;z-index:50;box-shadow:0 8px 22px #0008}
+.dc-collection-folder67 .dc-collection-menu68[hidden]{display:none!important}
+.dc-collection-folder67 .dc-collection-menu68 button{text-align:left}
+
+/* Las imágenes verticales se muestran enteras hasta ajustar encuadre 16:9. */
+.dc-collection-folder67 .dc-collection-poster67[data-layout="2:3"]{aspect-ratio:2/3}
+.dc-collection-folder67 .dc-collection-poster67[data-layout="auto"]{aspect-ratio:2/3}
+.dc-collection-folder67 .dc-collection-poster67[data-layout="16:9"] img{object-fit:cover}
+.dc-collection-folder67 .dc-collection-poster67 img{object-fit:contain;object-position:center;background:#121b2a}
+
+.dc-cover-overlay68{position:fixed;inset:0;background:#000b;display:grid;place-items:center;padding:16px;z-index:100500}
+.dc-cover-pane68{width:min(620px,100%);max-height:95vh;overflow:auto;border:1px solid #62748a;background:#1b2638;color:#fff;border-radius:12px;padding:18px}
+.dc-cover-pane68 h3{margin:0 0 8px}.dc-cover-pane68 select{display:block;margin:10px 0;padding:9px;background:#25364c;color:#fff;max-width:100%}
+.dc-cover-frame68{width:min(440px,100%);aspect-ratio:16/9;margin:auto;background:#0d1624;overflow:hidden;touch-action:none;user-select:none;border:2px solid #93a3b9;border-radius:8px}
+.dc-cover-frame68[data-layout="2:3"]{width:min(290px,100%);aspect-ratio:2/3}
+.dc-cover-frame68 img{width:100%;height:100%;object-fit:cover;pointer-events:none;display:block}
+.dc-cover-editor-actions68{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.dc-cover-editor-actions68 button{padding:8px;border:1px solid #64748b;background:#293b54;color:#fff;border-radius:8px;cursor:pointer}
+
+#dcyGrid .dc-collection-media68 .dc-collection-poster67[data-layout="2:3"],#dcyGrid .dc-collection-media68 .dc-collection-poster67[data-layout="auto"]{aspect-ratio:2/3}
+
+/* v20.10.69: sección propia para colecciones en carpetas YouTube Links */
+.dc-collections-section69{margin:14px 0 20px;clear:both;width:100%;min-width:0}
+.dc-collections-heading69{font-size:14px;font-weight:650;margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid rgba(150,165,190,.30)}
+.dc-collections-grid69{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:14px;align-items:start}
+#dcCollectionsGrid69 .dc-collection-section69{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0;width:100%;max-width:100%;box-sizing:border-box;overflow:visible;gap:8px}
+#dcCollectionsGrid69 .dc-collection-poster67{width:100%;aspect-ratio:16/9}
+#dcCollectionsGrid69 .dc-collection-poster67[data-layout="2:3"]{aspect-ratio:2/3}
+#dcCollectionsGrid69 .dc-collection-ui67{min-width:0;width:100%;gap:7px}
+#dcCollectionsGrid69 .dc-collection-ui67 select{width:100%;min-width:0}
+/* Ocultar solo los metadatos redundantes de la carpeta, nunca su menú contextual. */
+#dcCollectionsGrid69 .dc-collection-section69>.file-name,
+#dcCollectionsGrid69 .dc-collection-section69>.file-meta,
+#dcCollectionsGrid69 .dc-collection-section69>.file-size,
+#dcCollectionsGrid69 .dc-collection-section69>.file-date{display:none!important}
+#dcCollectionsGrid69 .dc-collection-section69>.menu-dots{position:absolute!important;top:9px!important;right:9px!important;left:auto!important;bottom:auto!important;z-index:8!important;margin:0!important}
+#dcCollectionsGrid69 .dc-collection-section69>.context-menu-drive{z-index:90}
+#dcCollectionsGrid69 .dc-collection-actions67{display:flex;flex-wrap:wrap;align-items:center}
+
+/* v20.10.70 — mismo botón y fondo que las tarjetas multimedia */
+#dcCollectionsGrid69 .dc-collection-section69>.menu-dots{
+  background:#18283e!important;color:#fff!important;border:1px solid #6d819b!important;
+  width:30px!important;height:32px!important;border-radius:9px!important;
+  display:grid!important;place-items:center!important;font-size:19px!important;
+  box-shadow:0 2px 8px #0005!important;
+}
+#dcCollectionsGrid69 .dc-collection-section69>.context-menu-drive{background:#19283e;color:#fff;min-width:242px;max-width:242px;z-index:120!important}
+#dcCollectionsGrid69 .dc-collection-section69>.context-menu-drive a{color:inherit}
+
+/* v20.10.71: colección con la MISMA superficie y respuesta hover que .dcy-card. */
+#dcCollectionsGrid69 .file-item.dc-collection-section69.dcy-card{
+  border:1px solid #343c4a!important;border-radius:12px!important;
+  padding:12px!important;background:#111419!important;color:#f5f6f8!important;
+  box-shadow:0 2px 10px rgba(0,0,0,.13)!important;
+  overflow:visible!important;transition:border-color .16s ease,box-shadow .16s ease,transform .16s ease;
+}
+#dcCollectionsGrid69 .file-item.dc-collection-section69.dcy-card:hover{
+  border-color:#6c8eb7!important;box-shadow:0 0 0 1px rgba(108,142,183,.25),0 4px 18px rgba(0,0,0,.26)!important;
+}
+#dcCollectionsGrid69 .dc-collection-description71{
+  font-size:12px;line-height:1.45;color:#afb7c5;white-space:pre-wrap;overflow-wrap:anywhere;
+}
+#dcCollectionsGrid69 .dc-collection-description71:empty{display:none}
+#dcCollectionsGrid69 .dc-collection-section69>.menu-dots{background:#111c2eea!important;color:#fff!important;border:1px solid #ffffff55!important}
+/* La tarjeta original no debe reaparecer encima de la sección de Colecciones. */
+body:has(#dcCollectionsGrid69) #fileGrid>.dc-collection-folder67{display:none!important}
+
+/* v20.10.73: cinco bloques clasificados en carpetas YouTube Links. */
+#dcyGrid.dc-sections73{display:block;margin:0;min-width:0;width:100%}
+#dcyGrid .dc-media-section73{margin:15px 0 18px;width:100%;min-width:0}
+#dcyGrid .dc-media-heading73,.dc-others-heading73{font-size:14px;font-weight:650;margin:0 0 12px;padding:0 0 9px;border-bottom:1px solid rgba(150,165,190,.3);line-height:1.4}
+#dcyGrid .dc-media-items73{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,350px),1fr));gap:12px;align-items:stretch;margin:0}
+#dcyGrid #dcCollectionsSection69{margin:15px 0 18px}
+#dcyGrid .dc-media-section73[hidden]{display:none!important}
+.dc-others-heading73{margin:20px 0 12px;width:100%}
+
+/* v20.10.75: el menú de la colección domina TODA la sección adyacente. */
+#dcyGrid.dc-sections73 .dc-media-section73,
+#dcyGrid.dc-sections73 .dc-collections-section69 {position:relative;z-index:0;overflow:visible}
+#dcyGrid.dc-sections73 .dc-collections-section69:has(.context-menu-drive.show),
+#dcyGrid.dc-sections73 .dc-media-section73:has(.context-menu-drive.show),
+#dcyGrid.dc-sections73 .dc-menu-layer75 {z-index:9000!important}
+#dcCollectionsGrid69 .file-item:has(>.context-menu-drive.show),
+#fileGrid .file-item:has(>.context-menu-drive.show),
+#dcyGrid .file-item.dc-menu-layer75 {position:relative;z-index:9001!important;overflow:visible!important}
+#dcCollectionsGrid69 .context-menu-drive.show {z-index:9002!important;width:210px!important;max-width:210px!important}
+
+
+/* v20.10.76: zoom y refresco de encuadre en portadas de colección */
+.dc-collection-folder67 .dc-collection-poster67 img{transform-origin:center center;will-change:transform,object-position}
+.dc-cover-controls76{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0 0}
+.dc-cover-controls76 button{padding:7px 10px;border:1px solid #64748b;background:#293b54;color:#fff;border-radius:8px;cursor:pointer}
+.dc-cover-controls76 input[type=range]{flex:1;min-width:180px}
+.dc-cover-zoom-label76{font-size:12px;color:#d7e3ef;min-width:74px;text-align:right}
+
+/* v20.10.77: recortar SOLO el marco, nunca la fuente antes de aplicar zoom. */
+.dc-collection-folder67 .dc-collection-poster67 img,
+.dc-cover-frame68 img{object-fit:contain!important;object-position:center!important;transform-origin:center center!important;background:transparent!important;}
+
+/* DC84c: estilo común de la barra de acciones, sin depender de inserciones posteriores. */
+#viewerBody > .dc-video-actions84b{display:flex!important;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px;margin:10px auto 4px;width:100%;}
+#viewerBody > .dc-video-actions84b > button{display:inline-flex!important;align-items:center;justify-content:center;box-sizing:border-box;width:auto!important;min-height:33px;margin:0!important;padding:7px 12px!important;border:1px solid var(--border-color,#8090a5)!important;border-radius:7px!important;background:var(--panel-bg,#27364b)!important;color:var(--text-color,#fafafa)!important;white-space:nowrap;font-size:13px;font-family:inherit;line-height:1.25;cursor:pointer;}
+#viewerBody > .dc-video-actions84b > button:hover{filter:brightness(1.14)}
+@media(max-width:670px){#viewerBody > .dc-video-actions84b{gap:7px}#viewerBody > .dc-video-actions84b > button{font-size:12px;white-space:normal}}

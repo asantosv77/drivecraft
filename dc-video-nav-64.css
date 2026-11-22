@@ -1,0 +1,4 @@
+/* v20.10.64 - controles de navegacion del reproductor */
+.dc-video-nav64{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:8px;color:var(--text-color,inherit);font-size:12px}
+.dc-video-nav64 button{padding:8px 18px;cursor:pointer;border-radius:8px;border:1px solid var(--border-color,#667);background:var(--hover-bg,#253246);color:inherit}
+.dc-video-nav64 button:disabled{opacity:.3;cursor:not-allowed}

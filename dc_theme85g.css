@@ -1,0 +1,77 @@
+/* DC85g: preferencias multimedia y tema claro; oscuro permanece intacto. */
+.dc-music-cards81{grid-template-columns:repeat(auto-fill,minmax(min(100%,var(--dc85g-music-width,255px)),1fr))!important}
+#dcCollectionsGrid69.dc-collections-grid69{grid-template-columns:repeat(auto-fill,minmax(min(100%,var(--dc85g-collection-width,260px)),1fr))!important}
+.dc-music-poster81{position:relative;isolation:isolate;display:flex!important;align-items:center;justify-content:center;width:100%;min-width:0;max-width:100%;aspect-ratio:16/9;overflow:hidden!important}
+.dc-music-poster81>img{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;max-width:100%!important;max-height:100%!important;object-fit:var(--dc85g-music-fit,contain)!important;object-position:center!important}
+.dc85g-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 4px}.dc85g-tab{flex:1;white-space:nowrap}.dc85g-tab.active{background:#4f46e5!important;color:#fff!important;border-color:#4f46e5!important}.dc85g-tabpanel[hidden]{display:none}
+[data-theme="light"]{--bg-color:#f8fafc;--card-bg:#fff;--text-color:#1e293b;--border-color:#cbd5e1;--primary-color:#4f46e5;--hover-bg:#eef2ff;--selected-bg:#e0e7ff}
+[data-theme="light"] body,[data-theme="light"] .main-content{background:#f8fafc;color:#1e293b}
+[data-theme="light"] .sidebar{background:#edf2f7;border-right:1px solid #cbd5e1}
+[data-theme="light"] .dc-music-card81,[data-theme="light"] .dcy-card,[data-theme="light"] .dc-photo-card,[data-theme="light"] .file-item{background:#fff;color:#1e293b;border-color:#cbd5e1}
+[data-theme="light"] #dcCollectionsGrid69 .file-item.dc-collection-section69.dcy-card{background:#fff!important;color:#1e293b!important;border-color:#cbd5e1!important;box-shadow:0 2px 8px #64748b18!important}
+[data-theme="light"] #dcCollectionsGrid69 .dc-collection-description71{color:#64748b}
+[data-theme="light"] .dc-music-poster81{background:#f1f5f9;color:#475569}
+[data-theme="light"] .dc-music-card81 select,[data-theme="light"] .dc-music-actions81 button,[data-theme="light"] .dc-collection-actions67 button,[data-theme="light"] .dc-video-actions84b button{background:#f1f5f9!important;color:#334155!important;border:1px solid #cbd5e1!important}
+[data-theme="light"] .dc-music-actions81 button:hover,[data-theme="light"] .dc-collection-actions67 button:not(:disabled):hover,[data-theme="light"] .dc-video-actions84b button:not(:disabled):hover{background:#e0e7ff!important;border-color:#818cf8!important}
+[data-theme="light"] .dc-music-actions81 button:focus-visible,[data-theme="light"] .dc-collection-actions67 button:focus-visible{outline:2px solid #4f46e5;outline-offset:2px}
+[data-theme="light"] .dc-yt55-dialog{background:#fff;color:#1e293b;border-color:#cbd5e1;box-shadow:0 18px 55px #33415538}
+[data-theme="light"] .dc-yt55-dialog button{background:#f1f5f9;color:#334155;border-color:#cbd5e1}
+[data-theme="light"] .dc-yt55-dialog .dc85g-tab.active{background:#4f46e5!important;color:#fff!important}
+[data-theme="light"] .dc-yt55-row input{accent-color:#4f46e5}
+[data-theme="light"] .dc85b-admin-tools button{background:#f1f5f9;color:#334155;border-color:#cbd5e1}
+[data-theme="light"] .dc85b-admin-tools button:hover{background:#e0e7ff;color:#3730a3}
+[data-theme="light"] .dc-settings-group{background:#fff;border-color:#cbd5e1}
+[data-theme="light"] #viewerModal .dc-video-actions84b button{background:#f1f5f9;color:#334155;border-color:#cbd5e1}
+
+/* DC85h: superficies claras de módulos heredados */
+[data-theme="light"] .dc-metrics85-box{background:#fff!important;color:#1e293b!important;border-color:#cbd5e1!important;box-shadow:0 16px 48px #1e293b33}
+[data-theme="light"] .dc-metrics85-box button{background:#edf2f7!important;color:#1e293b!important;border-color:#cbd5e1!important}
+[data-theme="light"] .dc-metrics85-box button:hover{background:#e0e7ff!important}
+[data-theme="light"] .dc-metrics85-box p{color:#64748b!important}
+[data-theme="light"] .dc-metrics85-stats>div{background:#f8fafc!important;border-color:#cbd5e1!important;color:#1e293b!important}
+[data-theme="light"] .dc-metrics85-day input{background:#fff;color:#1e293b;border:1px solid #cbd5e1}
+[data-theme="light"] .dc-photo-card,[data-theme="light"] .dc-photo-album,[data-theme="light"] .dc-photo-section,[data-theme="light"] .dc-photo-collage{background:#fff!important;color:#1e293b!important;border-color:#cbd5e1!important}
+[data-theme="light"] .dc-music-card81 .dc-music-menu81{background:#fff!important;border-color:#cbd5e1!important;box-shadow:0 8px 26px #1e293b33!important}
+[data-theme="light"] .dc-music-card81 .dc-music-menu81 button{color:#1e293b!important}
+[data-theme="light"] .dc-music-card81 .dc-music-menu81 button:hover{background:#e0e7ff!important}
+
+/* DC85i: menús contextuales claros de Youtube y biblioteca musical */
+html[data-theme="light"] .dcy-menu,html[data-theme="light"] #dcyGrid .dcy-menu{background:#fff!important;color:#1e293b!important;border:1px solid #cbd5e1!important;box-shadow:0 12px 30px #1e293b30!important}
+html[data-theme="light"] .dcy-menu button,html[data-theme="light"] #dcyGrid .dcy-menu button{color:#1e293b!important;background:transparent!important;-webkit-text-fill-color:#1e293b!important}
+html[data-theme="light"] .dcy-menu button:hover{background:#e0e7ff!important}
+html[data-theme="light"] .dc-music-card81 .dc-music-menu81{background:#fff!important;color:#1e293b!important;border:1px solid #cbd5e1!important;box-shadow:0 12px 30px #1e293b30!important}
+html[data-theme="light"] .dc-music-card81 .dc-music-menu81 button{background:transparent!important;color:#1e293b!important;-webkit-text-fill-color:#1e293b!important}
+html[data-theme="light"] .dc-music-card81 .dc-music-menu81 button:hover{background:#e0e7ff!important}
+/* Subpanel administrativo sobre configuración conservada */
+.dc85i-admin-subview{position:absolute;inset:0;z-index:5;background:rgba(14,24,42,.44);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:18px 12px;border-radius:12px}
+.dc85i-admin-subpanel{position:relative;max-width:min(100%,1100px);width:100%;max-height:85vh;overflow:auto;background:#1e293b;color:#eef2ff;border:1px solid #64748b;border-radius:12px;padding:20px;box-shadow:0 18px 55px #0006}
+.dc85i-admin-subhead{display:flex;align-items:center;gap:12px;justify-content:space-between;position:sticky;top:-20px;padding:12px 0;background:inherit;z-index:6}
+.dc85i-admin-subhead button{border:1px solid #8ca1b9;border-radius:8px;padding:7px 11px;cursor:pointer}
+#dcUtilityBody:has(.dc85i-admin-subview){position:relative;min-height:60vh}
+html[data-theme="light"] .dc85i-admin-subpanel{background:#fff;color:#1e293b;border-color:#cbd5e1}
+html[data-theme="light"] .dc85i-admin-subhead button{background:#eef2ff;color:#3730a3;border-color:#c7d2fe}
+
+/* DC85j: panel de administracion hermano de la configuracion, sin scroll anidado */
+#dcUtilityModal .dc-utility-modal{position:relative}
+#dcUtilityModal .dc85i-admin-subview{position:fixed!important;inset:0!important;z-index:250000!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;border-radius:0!important;padding:clamp(12px,3vh,28px)!important;background:rgba(12,22,38,.48)!important;backdrop-filter:blur(4px)}
+#dcUtilityModal .dc85i-admin-subpanel{width:min(940px,96vw)!important;max-width:940px!important;max-height:min(85vh,920px)!important;overflow:hidden!important;display:flex!important;flex-direction:column!important;padding:0!important;border-radius:13px!important;box-shadow:0 20px 55px #0005!important}
+#dcUtilityModal .dc85i-admin-subhead{position:static!important;flex-shrink:0!important;top:auto!important;display:flex!important;justify-content:space-between!important;margin:0!important;padding:18px 20px!important;border-bottom:1px solid #94a3b844!important}
+#dcUtilityModal .dc85i-admin-subbody{min-height:0!important;overflow:auto!important;overscroll-behavior:contain!important;padding:18px 20px!important;flex:1!important}
+#dcUtilityModal .dc85i-admin-subbody .dc-utility-row{gap:12px;flex-wrap:wrap}
+#dcUtilityModal .dc85i-admin-subbody .dc-utility-row small{overflow-wrap:anywhere;max-width:100%}
+html[data-theme="light"] #dcUtilityModal .dc85i-admin-subpanel{background:#f8fafc!important;color:#1e293b!important;border-color:#cbd5e1!important}
+html[data-theme="light"] #dcUtilityModal .dc85i-admin-subbody button{color:#334155;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:7px}
+html[data-theme="light"] #dcUtilityModal .dc85i-admin-subbody button:hover{background:#e0e7ff}
+/* Portada musical: el popup debe superar tarjetas vecinas y no recortarse */
+.dc-music-section81:has(.dc-music-menu81:not([hidden])){position:relative!important;z-index:18000!important;isolation:auto!important}
+.dc-music-cards81:has(.dc-music-menu81:not([hidden])){position:relative!important;z-index:18001!important;isolation:auto!important}
+.dc-music-card81:has(.dc-music-menu81:not([hidden])){z-index:18002!important}
+.dc-music-card81 .dc-music-menu81:not([hidden]){z-index:18003!important;box-shadow:0 12px 32px #0006!important}
+
+/* DC85k: the music menu must never cover a utility modal. */
+.dc-music-section81:has(.dc-music-menu81:not([hidden])){z-index:70!important}
+.dc-music-cards81:has(.dc-music-menu81:not([hidden])){z-index:71!important}
+.dc-music-card81:has(.dc-music-menu81:not([hidden])){z-index:72!important}
+.dc-music-card81 .dc-music-menu81:not([hidden]){z-index:73!important}
+#dcUtilityModal[style*="display: block"],#dcUtilityModal[style*="display:block"]{z-index:200000!important}
+.dc-music-menu81[hidden]{display:none!important;visibility:hidden!important;pointer-events:none!important}

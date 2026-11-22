@@ -1,0 +1,126 @@
+[
+    {
+        "name": "dc_album_photo_notes",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_album_photo_notes` (\n  `file_id` bigint(20) NOT NULL,\n  `description` text NOT NULL,\n  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`file_id`),\n  KEY `idx_album_notes_updated` (`updated_at`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"
+    },
+    {
+        "name": "dc_app_settings",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_app_settings` (\n  `setting_key` varchar(100) NOT NULL,\n  `setting_value` varchar(255) NOT NULL,\n  PRIMARY KEY (`setting_key`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_audio_sources_dcft",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_audio_sources_dcft` (\n  `file_id` bigint(20) unsigned NOT NULL,\n  `owner_id` bigint(20) unsigned NOT NULL,\n  `source_url` varchar(200) NOT NULL,\n  `format` varchar(8) NOT NULL,\n  `bitrate_kbps` smallint(6) NOT NULL,\n  `created_at` datetime NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`file_id`),\n  KEY `owner_audio` (`owner_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_internal_shares",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_internal_shares` (\n  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,\n  `file_id` int(11) NOT NULL,\n  `owner_id` int(11) NOT NULL,\n  `recipient_id` int(11) NOT NULL,\n  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `uniq_file_recipient` (`file_id`,`recipient_id`),\n  KEY `idx_recipient` (`recipient_id`),\n  KEY `idx_owner` (`owner_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_internal_shortcuts",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_internal_shortcuts` (\n  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,\n  `share_id` bigint(20) unsigned NOT NULL,\n  `recipient_id` int(11) NOT NULL,\n  `parent_id` int(11) NOT NULL DEFAULT 0,\n  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `uniq_share_folder` (`share_id`,`recipient_id`,`parent_id`),\n  KEY `idx_recipient_folder` (`recipient_id`,`parent_id`),\n  KEY `idx_share` (`share_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_local_video_conversions",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_local_video_conversions` (\n  `video_file_id` bigint(20) unsigned NOT NULL,\n  `owner_id` bigint(20) unsigned NOT NULL,\n  `source_storage` varchar(255) NOT NULL,\n  `state` varchar(20) NOT NULL DEFAULT 'queued',\n  `message` varchar(255) DEFAULT NULL,\n  `updated_at` datetime NOT NULL,\n  `conversion_details` text DEFAULT NULL,\n  PRIMARY KEY (`video_file_id`),\n  KEY `idx_dc_lvc_queue` (`state`,`updated_at`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_local_video_previews",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_local_video_previews` (\n  `video_file_id` bigint(20) unsigned NOT NULL,\n  `owner_id` bigint(20) unsigned NOT NULL,\n  `source_storage` varchar(255) NOT NULL,\n  `state` varchar(16) NOT NULL DEFAULT 'queued',\n  `message` varchar(255) DEFAULT NULL,\n  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`video_file_id`),\n  KEY `idx_local_preview_state` (`state`,`updated_at`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_login_throttle_86",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_login_throttle_86` (\n  `throttle_key` varchar(191) NOT NULL,\n  `failures` int(10) unsigned NOT NULL DEFAULT 0,\n  `first_failure` int(10) unsigned NOT NULL,\n  `last_failure` int(10) unsigned NOT NULL,\n  `blocked_until` int(10) unsigned NOT NULL DEFAULT 0,\n  PRIMARY KEY (`throttle_key`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_media_jobs",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_media_jobs` (\n  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,\n  `file_id` int(11) NOT NULL,\n  `owner_id` int(11) NOT NULL,\n  `kind` varchar(20) NOT NULL,\n  `mode` varchar(20) NOT NULL DEFAULT 'manual',\n  `status` varchar(20) NOT NULL DEFAULT 'queued',\n  `source_storage` varchar(255) NOT NULL,\n  `output_file_id` int(11) DEFAULT NULL,\n  `message` varchar(255) DEFAULT NULL,\n  `created_at` datetime NOT NULL,\n  `started_at` datetime DEFAULT NULL,\n  `finished_at` datetime DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  KEY `ix_dc_media_jobs_status` (`status`,`id`),\n  KEY `ix_dc_media_jobs_user` (`owner_id`,`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_media_progress_dcft",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_media_progress_dcft` (\n  `owner_id` bigint(20) unsigned NOT NULL,\n  `kind` varchar(8) NOT NULL,\n  `item_key` varchar(32) NOT NULL,\n  `position_seconds` double NOT NULL DEFAULT 0,\n  `duration_seconds` double NOT NULL DEFAULT 0,\n  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`owner_id`,`kind`,`item_key`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_music_collection_modes_hf3",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_music_collection_modes_hf3` (\n  `owner_id` bigint(20) NOT NULL,\n  `folder_id` bigint(20) NOT NULL,\n  `enabled` tinyint(1) NOT NULL DEFAULT 1,\n  PRIMARY KEY (`owner_id`,`folder_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_music_covers_82",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_music_covers_82` (\n  `owner_id` bigint(20) unsigned NOT NULL,\n  `album_folder_id` bigint(20) unsigned NOT NULL,\n  `image_id` bigint(20) unsigned NOT NULL,\n  PRIMARY KEY (`owner_id`,`album_folder_id`),\n  KEY `idx_image_id` (`image_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_music_libraries_81",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_music_libraries_81` (\n  `owner_id` bigint(20) unsigned NOT NULL,\n  `folder_id` bigint(20) unsigned NOT NULL,\n  PRIMARY KEY (`owner_id`,`folder_id`),\n  KEY `folder_id` (`folder_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_music_progress_81",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_music_progress_81` (\n  `user_id` bigint(20) unsigned NOT NULL,\n  `album_folder_id` bigint(20) unsigned NOT NULL,\n  `track_id` bigint(20) unsigned NOT NULL,\n  `position_seconds` double NOT NULL DEFAULT 0,\n  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`user_id`,`album_folder_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_recent_activity_85m_hf2",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_recent_activity_85m_hf2` (\n  `owner_id` bigint(20) NOT NULL,\n  `file_id` bigint(20) NOT NULL,\n  `action` varchar(16) NOT NULL,\n  `activity_at` datetime(6) NOT NULL DEFAULT current_timestamp(6),\n  PRIMARY KEY (`owner_id`,`file_id`),\n  KEY `idx_dc_recent_activity_owner_time` (`owner_id`,`activity_at`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"
+    },
+    {
+        "name": "dc_reuse_cache_51",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_reuse_cache_51` (\n  `original_sha256` char(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,\n  `profile` varchar(96) NOT NULL,\n  `source_storage` varchar(255) NOT NULL,\n  `output_storage` varchar(255) NOT NULL,\n  `output_sha256` char(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,\n  `output_size` bigint(20) unsigned NOT NULL,\n  `poster_name` varchar(255) DEFAULT NULL,\n  `clip_name` varchar(255) DEFAULT NULL,\n  `poster_sha256` char(64) CHARACTER SET ascii COLLATE ascii_bin DEFAULT NULL,\n  `clip_sha256` char(64) CHARACTER SET ascii COLLATE ascii_bin DEFAULT NULL,\n  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`original_sha256`,`profile`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_reuse_events_52",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_reuse_events_52` (\n  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,\n  `kind` enum('conversion','preview') NOT NULL,\n  `method` enum('generated','reused') NOT NULL,\n  `file_id` bigint(20) unsigned NOT NULL,\n  `owner_id` bigint(20) unsigned NOT NULL,\n  `profile` varchar(96) NOT NULL,\n  `original_sha256` char(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,\n  `output_bytes` bigint(20) unsigned NOT NULL DEFAULT 0,\n  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`id`),\n  KEY `owner_id` (`owner_id`,`created_at`),\n  KEY `kind` (`kind`,`method`,`created_at`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_user_deletion_audit",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_user_deletion_audit` (\n  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,\n  `actor_id` bigint(20) unsigned DEFAULT NULL,\n  `deleted_user_id` bigint(20) unsigned NOT NULL,\n  `deleted_username` varchar(100) NOT NULL,\n  `files_action` enum('transfer','delete') NOT NULL,\n  `links_action` enum('transfer','revoke') NOT NULL,\n  `files_count` int(10) unsigned NOT NULL DEFAULT 0,\n  `destination_folder` varchar(255) DEFAULT NULL,\n  `created_at` datetime NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`id`),\n  KEY `idx_dc_audit_actor` (`actor_id`),\n  KEY `idx_dc_audit_date` (`created_at`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_user_sessions_79",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_user_sessions_79` (\n  `session_hash` char(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,\n  `user_id` bigint(20) unsigned NOT NULL,\n  `ip_address` varchar(45) NOT NULL DEFAULT '',\n  `first_seen` datetime NOT NULL,\n  `last_seen` datetime NOT NULL,\n  PRIMARY KEY (`session_hash`),\n  KEY `idx_dc79_user_last` (`user_id`,`last_seen`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_users",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_users` (\n  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,\n  `username` varchar(100) NOT NULL,\n  `password_hash` varchar(255) NOT NULL,\n  `role` enum('admin','user') NOT NULL DEFAULT 'user',\n  `status` enum('active','suspended') NOT NULL DEFAULT 'active',\n  `must_change_password` tinyint(1) NOT NULL DEFAULT 1,\n  `session_version` int(10) unsigned NOT NULL DEFAULT 1,\n  `session_days_dcft` int(10) unsigned NOT NULL DEFAULT 30,\n  `quota_bytes` bigint(20) unsigned DEFAULT NULL,\n  `max_file_bytes` bigint(20) unsigned DEFAULT NULL,\n  `can_share` tinyint(1) NOT NULL DEFAULT 0,\n  `can_upload` tinyint(1) NOT NULL DEFAULT 0,\n  `can_delete` tinyint(1) NOT NULL DEFAULT 0,\n  `created_at` datetime NOT NULL DEFAULT current_timestamp(),\n  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),\n  `receive_admin_limit_bytes` bigint(20) unsigned DEFAULT NULL,\n  `receive_limit_bytes` bigint(20) unsigned DEFAULT NULL,\n  `can_convert_video` tinyint(1) NOT NULL DEFAULT 0,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `username` (`username`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_video_collection_items_65",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_video_collection_items_65` (\n  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,\n  `collection_id` bigint(20) unsigned NOT NULL,\n  `video_id` bigint(20) unsigned NOT NULL,\n  `sort_order` int(11) NOT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `uq_collection_video` (`collection_id`,`video_id`),\n  KEY `collection_id` (`collection_id`,`sort_order`),\n  CONSTRAINT `fk_collection_65` FOREIGN KEY (`collection_id`) REFERENCES `dc_video_collections_65` (`id`) ON DELETE CASCADE\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_video_collections_65",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_video_collections_65` (\n  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,\n  `owner_id` bigint(20) unsigned NOT NULL,\n  `folder_id` bigint(20) unsigned NOT NULL,\n  `title` varchar(180) NOT NULL,\n  `description` text NOT NULL,\n  `cover_storage` varchar(128) DEFAULT NULL,\n  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),\n  `cover_layout` varchar(8) NOT NULL DEFAULT '16:9',\n  `cover_position_x` tinyint(3) unsigned NOT NULL DEFAULT 50,\n  `cover_position_y` tinyint(3) unsigned NOT NULL DEFAULT 50,\n  `cover_scale` tinyint(3) unsigned NOT NULL DEFAULT 100,\n  PRIMARY KEY (`id`),\n  KEY `owner_id` (`owner_id`,`folder_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_video_progress_67",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_video_progress_67` (\n  `owner_id` bigint(20) unsigned NOT NULL,\n  `collection_id` bigint(20) unsigned NOT NULL,\n  `video_id` bigint(20) unsigned NOT NULL,\n  `position_seconds` double NOT NULL DEFAULT 0,\n  `duration_seconds` double NOT NULL DEFAULT 0,\n  `completed` tinyint(1) NOT NULL DEFAULT 0,\n  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),\n  PRIMARY KEY (`owner_id`,`collection_id`,`video_id`),\n  KEY `collection_id` (`collection_id`,`owner_id`),\n  CONSTRAINT `fk_dc_video_progress_collection_67` FOREIGN KEY (`collection_id`) REFERENCES `dc_video_collections_65` (`id`) ON DELETE CASCADE\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_youtube_folders",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_youtube_folders` (\n  `folder_id` int(11) NOT NULL,\n  `owner_id` int(11) NOT NULL,\n  `created_at` datetime NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`folder_id`),\n  KEY `idx_owner` (`owner_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_youtube_jobs_dcft",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_youtube_jobs_dcft` (\n  `id` char(32) NOT NULL,\n  `owner_id` bigint(20) unsigned NOT NULL,\n  `folder_id` bigint(20) unsigned NOT NULL,\n  `youtube_id` char(11) NOT NULL,\n  `height` smallint(6) NOT NULL DEFAULT 720,\n  `state` varchar(16) NOT NULL DEFAULT 'queued',\n  `phase` varchar(80) NOT NULL DEFAULT 'En cola',\n  `progress` float NOT NULL DEFAULT 0,\n  `download_percent` float DEFAULT NULL,\n  `title` varchar(300) NOT NULL DEFAULT '',\n  `message` varchar(1000) NOT NULL DEFAULT '',\n  `attempts` tinyint(4) NOT NULL DEFAULT 0,\n  `file_id` bigint(20) unsigned DEFAULT NULL,\n  `package_id` bigint(20) unsigned DEFAULT NULL,\n  `next_attempt` datetime DEFAULT NULL,\n  `created_at` datetime NOT NULL DEFAULT current_timestamp(),\n  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),\n  `media_kind` varchar(8) NOT NULL DEFAULT 'video',\n  `audio_format` varchar(8) NOT NULL DEFAULT 'opus',\n  `audio_bitrate` smallint(6) NOT NULL DEFAULT 128,\n  PRIMARY KEY (`id`),\n  KEY `queue_state` (`state`,`next_attempt`,`created_at`),\n  KEY `owner_jobs` (`owner_id`,`created_at`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "dc_youtube_links",
+        "ddl": "CREATE TABLE IF NOT EXISTS `dc_youtube_links` (\n  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,\n  `folder_id` int(11) NOT NULL,\n  `owner_id` int(11) NOT NULL,\n  `youtube_id` varchar(11) NOT NULL,\n  `title` varchar(240) NOT NULL,\n  `description` text DEFAULT NULL,\n  `created_at` datetime NOT NULL DEFAULT current_timestamp(),\n  `deleted_at` datetime DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `uq_folder_video` (`folder_id`,`youtube_id`),\n  KEY `idx_owner_folder` (`owner_id`,`folder_id`),\n  KEY `idx_dc_youtube_trash` (`owner_id`,`folder_id`,`deleted_at`,`created_at`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "file_versions",
+        "ddl": "CREATE TABLE IF NOT EXISTS `file_versions` (\n  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,\n  `file_id` int(11) NOT NULL,\n  `storage_name` varchar(255) NOT NULL,\n  `size` bigint(20) NOT NULL DEFAULT 0,\n  `created_at` datetime NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`id`),\n  KEY `idx_file_versions_file` (`file_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "files",
+        "ddl": "CREATE TABLE IF NOT EXISTS `files` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `parent_id` int(11) DEFAULT 0,\n  `name` varchar(255) NOT NULL,\n  `is_dir` tinyint(1) DEFAULT 0,\n  `mime_type` varchar(100) DEFAULT NULL,\n  `size` bigint(20) DEFAULT 0,\n  `storage_name` varchar(255) DEFAULT NULL,\n  `has_thumb` tinyint(1) DEFAULT 0,\n  `has_list` tinyint(1) DEFAULT 0,\n  `created_at` timestamp NULL DEFAULT current_timestamp(),\n  `deleted_at` datetime DEFAULT NULL,\n  `favorite` tinyint(1) NOT NULL DEFAULT 0,\n  `version_enabled` tinyint(1) NOT NULL DEFAULT 0,\n  `last_opened` datetime DEFAULT NULL,\n  `owner_id` bigint(20) unsigned DEFAULT NULL,\n  `received_via_link_id` bigint(20) unsigned DEFAULT NULL,\n  `received_highlight` tinyint(1) NOT NULL DEFAULT 0,\n  `is_album` tinyint(1) NOT NULL DEFAULT 0,\n  `content_hash_algorithm` varchar(8) DEFAULT NULL,\n  `content_hash` char(64) CHARACTER SET ascii COLLATE ascii_bin DEFAULT NULL,\n  `head_hash` char(64) CHARACTER SET ascii COLLATE ascii_bin DEFAULT NULL COMMENT 'SHA-256 de los primeros 2 MiB (DC_MERKLE_HEAD_BYTES)',\n  `image_dhash` char(16) CHARACTER SET ascii COLLATE ascii_bin DEFAULT NULL,\n  `photo_review_status` varchar(16) DEFAULT NULL,\n  `photo_review_target_id` int(11) DEFAULT NULL,\n  `image_phash` char(16) CHARACTER SET ascii COLLATE ascii_bin DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  KEY `idx_dc_deleted` (`deleted_at`),\n  KEY `idx_dc_favorite` (`favorite`,`deleted_at`),\n  KEY `idx_dc_recent` (`last_opened`),\n  KEY `idx_dc_files_owner_parent` (`owner_id`,`parent_id`),\n  KEY `idx_dc_received_link` (`received_via_link_id`),\n  KEY `idx_dc_files_owner_size_hash` (`owner_id`,`size`,`content_hash_algorithm`,`content_hash`),\n  KEY `idx_dc_photo_review` (`owner_id`,`photo_review_status`),\n  KEY `idx_dc_files_head_hash` (`size`,`head_hash`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "receive_links",
+        "ddl": "CREATE TABLE IF NOT EXISTS `receive_links` (\n  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,\n  `folder_id` int(11) NOT NULL,\n  `hash` varchar(64) NOT NULL,\n  `password_hash` varchar(255) DEFAULT NULL,\n  `expires_at` datetime DEFAULT NULL,\n  `created_at` datetime NOT NULL DEFAULT current_timestamp(),\n  `owner_id` bigint(20) unsigned DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `hash` (`hash`),\n  KEY `idx_receive_folder` (`folder_id`),\n  KEY `idx_dc_receive_owner` (`owner_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "share_events",
+        "ddl": "CREATE TABLE IF NOT EXISTS `share_events` (\n  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,\n  `share_id` int(11) NOT NULL,\n  `event_type` enum('view','download') NOT NULL,\n  `occurred_at` datetime NOT NULL DEFAULT current_timestamp(),\n  PRIMARY KEY (`id`),\n  KEY `idx_share_events` (`share_id`,`event_type`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    },
+    {
+        "name": "shares",
+        "ddl": "CREATE TABLE IF NOT EXISTS `shares` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `file_id` int(11) NOT NULL,\n  `hash` varchar(64) NOT NULL,\n  `password_hash` varchar(255) DEFAULT NULL,\n  `expires_at` datetime DEFAULT NULL,\n  `created_at` timestamp NULL DEFAULT current_timestamp(),\n  `owner_id` bigint(20) unsigned DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  KEY `idx_dc_shares_owner` (`owner_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci"
+    }
+]

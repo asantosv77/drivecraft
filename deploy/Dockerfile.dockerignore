@@ -1,0 +1,20 @@
+# This file applies to the parent build context for deploy/Dockerfile.
+.git
+.env
+.env.*
+**/.env
+**/.env.*
+!**/.env.example
+**/backups
+**/database
+**/dbwww_data
+**/storage
+**/sessions
+**/__pycache__
+*.tar.gz
+*.tgz
+*.zip
+*.bak
+*.old
+*.log
+deploy/Dockerfile.php.imagemagic

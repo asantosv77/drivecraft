@@ -1,0 +1,28 @@
+/* Drive-Craft v20.7: mejoras para enlaces y almacenamiento en móvil */
+#recvResult{display:grid;gap:10px;min-width:0;width:100%;margin-top:12px;overflow-wrap:anywhere;}
+.dc-receive-link-row{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;min-width:0;width:100%;}
+.dc-receive-link-row input{flex:1 1 190px;min-width:0;max-width:100%;width:auto!important;box-sizing:border-box;}
+.dc-receive-link-row button{flex:0 0 auto;min-height:40px;white-space:nowrap;cursor:pointer;}
+#recvResult>a{overflow-wrap:anywhere;word-break:break-word;}
+/* Reservar un área libre después del último archivo, incluso en pantallas pequeñas. */
+.drop-zone{padding-bottom:clamp(145px,24vh,230px)!important;scroll-padding-bottom:160px;}
+.disk-watermark{white-space:normal!important;max-width:min(390px,calc(100vw - 24px));box-sizing:border-box;pointer-events:auto!important;}
+.disk-watermark[hidden],.dc-storage-restore[hidden]{display:none!important;}
+.disk-watermark .dc-storage-close{position:absolute;right:3px;top:2px;display:grid;place-items:center;width:27px;height:27px;background:var(--card-bg,#1c2637);color:var(--text-color,#fff);border:1px solid var(--border-color,#718096);border-radius:50%;cursor:pointer;pointer-events:auto;opacity:1;font-size:20px;line-height:1;z-index:3;}
+.disk-watermark .dc-storage-head{padding-right:28px;}
+.dc-storage-restore{position:fixed;right:12px;bottom:12px;z-index:80;background:var(--card-bg,#1c2637);color:var(--text-color,#fff);border:1px solid var(--border-color,#718096);border-radius:16px;font-size:12px;padding:7px 10px;cursor:pointer;opacity:.75;}
+@media(max-width:768px){
+ .disk-watermark{right:10px!important;bottom:10px!important;width:min(330px,calc(100vw - 20px));max-width:calc(100vw - 20px);font-size:12px!important;}
+ .dc-receive-link-row{flex-direction:column;}
+ .dc-receive-link-row input,.dc-receive-link-row button{flex:initial;width:100%!important;}
+}
+
+/* v20.10.38: enlaces con contraste en temas y barra adaptable */
+#dcUtilityBody a, .dc-settings-group a {color:#1454a8!important;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+[data-theme="dark"] #dcUtilityBody a, [data-theme="dark"] .dc-settings-group a {color:#8dc8ff!important}
+@media(max-width:768px){
+ .main-buttons{display:flex!important;flex-wrap:wrap!important;gap:7px!important;max-width:100%!important;min-width:0!important;align-items:center!important}
+ .main-buttons>button{flex:1 1 auto;min-width:0;white-space:normal!important;overflow-wrap:anywhere;padding:8px 9px!important}
+ .main-buttons>.avatar-logout{display:inline-flex!important;visibility:visible!important;opacity:1!important;flex:0 0 42px!important;min-width:42px!important;min-height:42px!important;align-items:center;justify-content:center;position:static!important;margin-left:auto!important}
+ .main-buttons>.avatar-logout svg{width:24px;height:24px}
+}

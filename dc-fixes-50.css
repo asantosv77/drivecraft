@@ -1,0 +1,8 @@
+/* v20.10.50 — una sola barra en el visor Markdown */
+#viewerModal .dc-markdown49 {
+    max-height: none !important;
+    height: auto !important;
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+}
+#viewerModal .dc-markdown49-switch { position: static; }

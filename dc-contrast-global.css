@@ -1,0 +1,38 @@
+/* Drive-Craft | contraste global 20.10.41-hotfix2
+ * Cargado como la ultima hoja para neutralizar cascadas anteriores.
+ * El color del texto SIEMPRE se define junto con el fondo correspondiente.
+ */
+:root { --dc-control-light-bg:#edf3fa; --dc-control-light-fg:#102238; --dc-control-light-border:#a6b8cc; }
+[data-theme="dark"] { --dc-field-bg:#243348; --dc-field-text:#f1f5f9; --dc-field-border:#70839b; }
+[data-theme="light"] { --dc-field-bg:#ffffff; --dc-field-text:#15263b; --dc-field-border:#9daec0; }
+/* Entradas editables y opciones nativas: legibles en cualquier modal. */
+html[data-theme] body :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]):not([type="hidden"]), select, textarea) {
+  background-color:var(--dc-field-bg)!important;
+  color:var(--dc-field-text)!important;
+  -webkit-text-fill-color:var(--dc-field-text)!important;
+  border:1px solid var(--dc-field-border)!important;
+  color-scheme:dark;
+}
+html[data-theme="light"] body :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]):not([type="hidden"]), select, textarea) {color-scheme:light}
+html[data-theme] body :is(input,textarea)::placeholder {color:#9aabc0!important;opacity:1}
+html[data-theme="light"] body :is(input,textarea)::placeholder {color:#64748b!important}
+html[data-theme] body select option{background:var(--dc-field-bg)!important;color:var(--dc-field-text)!important}
+/* Botones claros en los paneles: evitar letras claras sobre fondo blanco.
+   La pareja fondo+texto se aplica junta para evitar reglas de versiones anteriores. */
+html[data-theme] body :is(#dcUtilityModal,#dcSettingsModal,.dc-settings-panel,.dc-settings-group) button:not(.btn-primary):not(.dc-btn-primary):not(.btn-danger):not(.dc-btn-danger):not(.share-danger):not(.avatar-logout):not([class*="bg-red"]):not([class*="bg-blue"]):not([class*="bg-green"]):not([class*="bg-emerald"]):not([class*="bg-indigo"]):not([class*="bg-yellow"]):not([class*="bg-amber"]) {
+  background-color:var(--dc-control-light-bg)!important;
+  color:var(--dc-control-light-fg)!important;
+  -webkit-text-fill-color:var(--dc-control-light-fg)!important;
+  border-color:var(--dc-control-light-border)!important;
+}
+/* Captura de reglas muy especificas de v20.10.41 sobre el editor. */
+html[data-theme] body #dcUtilityModal:has(#dcUserEditor) button:not(.btn-primary):not(.dc-btn-primary):not(.btn-danger):not(.dc-btn-danger):not(.share-danger) {
+  background-color:var(--dc-control-light-bg)!important;color:var(--dc-control-light-fg)!important;
+  -webkit-text-fill-color:var(--dc-control-light-fg)!important;
+}
+/* Acciones primarias y destructivas, preservando su semantica. */
+html[data-theme] body :is(#dcUtilityModal,#dcSettingsModal,.dc-settings-panel,.dc-settings-group) :is(button.btn-primary,button.dc-btn-primary){background:#1763bf!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+html[data-theme] body :is(#dcUtilityModal,#dcSettingsModal,.dc-settings-panel,.dc-settings-group) :is(button.btn-danger,button.dc-btn-danger,button.share-danger){background:#a92132!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+/* Botones del panel de configuracion, incluso si no estan dentro del modal utilitario. */
+html[data-theme] body :is(.settings-modal,.settings-panel,.settings-content,#settingsModal,#settingsPanel) button:not(.btn-primary):not(.btn-danger):not(.dc-btn-primary):not(.dc-btn-danger){background:#edf3fa!important;color:#102238!important;-webkit-text-fill-color:#102238!important}
+html[data-theme] body :is(button,input,select,textarea):focus-visible{outline:2px solid #60a5fa!important;outline-offset:2px}

@@ -1,0 +1,13 @@
+/* Popover superpuesto; las tarjetas conservan sus dimensiones. */
+.dc31-attachment-wrap{position:relative;max-width:100%;padding:4px 8px 8px;z-index:8}
+.dc31-attachment-toggle{max-width:100%;background:transparent;color:var(--text-color,#ddd);border:1px solid var(--border-color,#526078);border-radius:7px;cursor:pointer;padding:5px 8px;font:inherit;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dc31-no-attachments{font-size:11px;opacity:.65}
+.dc31-attachment-list{position:absolute;left:8px;bottom:calc(100% - 4px);width:min(310px,calc(100vw - 56px));max-height:220px;overflow:auto;overscroll-behavior:contain;background:var(--card-bg,#1d293a);border:1px solid var(--border-color,#526078);border-radius:8px;box-shadow:0 8px 28px #0008;padding:7px;z-index:1000;color:var(--text-color,#fff)}
+.dc31-attachment-list[hidden]{display:none!important}
+.dc31-attachment-line{display:flex;align-items:center;gap:8px;padding:5px 2px;border-bottom:1px solid var(--border-color,#526078);min-width:0}
+.dc31-attachment-line:last-child{border-bottom:0}
+.dc31-attachment-line a{flex:1;min-width:0;overflow-wrap:anywhere;color:var(--text-color,#fff);font-size:12px;text-decoration:none}
+.dc31-attachment-line a:hover{text-decoration:underline}
+.dc31-attachment-line small{flex-shrink:0;opacity:.75;font-size:10px}
+.dc31-attachment-delete{background:transparent;border:0;cursor:pointer;color:inherit}
+.dcy-card:has(.dc31-attachment-list:not([hidden])){z-index:200!important;overflow:visible!important}

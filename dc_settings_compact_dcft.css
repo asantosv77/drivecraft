@@ -1,0 +1,66 @@
+/* Dense columns eliminate empty grid cells; footer stays outside the scroll area. */
+#dcUtilityModal.dc-settings-open .dc-utility-modal{
+ box-sizing:border-box;display:flex;flex-direction:column;position:relative;
+ width:min(1200px,95vw)!important;max-height:calc(100vh - 32px)!important;
+ max-height:calc(100dvh - 32px)!important;overflow:hidden!important;padding:18px!important;
+ margin:16px auto!important;
+}
+#dcUtilityModal.dc-settings-open #dcUtilityTitle{flex:0 0 auto;padding-right:28px;margin:0 0 12px}
+#dcUtilityModal.dc-settings-open #dcUtilityBody{flex:1 1 auto;min-height:0;overflow:auto;overscroll-behavior:contain;padding-right:5px}
+#dcUtilityModal.dc-settings-open .dc-settings-grid{display:block;columns:3;column-gap:12px}
+#dcUtilityModal.dc-settings-open .dc-settings-group{
+ box-sizing:border-box;break-inside:avoid;page-break-inside:avoid;width:100%;
+ margin:0 0 12px!important;padding:12px;gap:8px;
+}
+#dcUtilityModal.dc-settings-open .dc-settings-group input,
+#dcUtilityModal.dc-settings-open .dc-settings-group select{max-width:100%;box-sizing:border-box}
+#dcUtilityModal.dc-settings-open .dc-settings-group label{line-height:1.45}
+#dcUtilityModal.dc-settings-open .dc-settings-actions{
+ flex:0 0 auto;position:static;display:flex;align-items:center;gap:12px;justify-content:flex-end;
+ padding:12px 0 0;border-top:1px solid var(--border-color,#64748b);margin-top:4px;
+ background:var(--card-bg,var(--background-color,#fff));
+}
+#dcSettingsSaveStatus{font-size:.85rem;flex:1;min-width:0}
+#dcSettingsSaveButton{flex:none;position:relative;overflow:hidden;min-width:170px}
+.dc-config-saving:before{content:'';position:absolute;inset:0;background:radial-gradient(circle,#ffffff70 0%,#ffffff15 55%,transparent 70%);animation:dc-config-pulse 1.5s ease-in-out infinite}
+.dc-config-loading{opacity:.7;animation:dc-config-pulse 1.5s ease-in-out infinite}
+@keyframes dc-config-pulse{0%{opacity:.25;transform:scale(.4)}75%,100%{opacity:.8;transform:scale(1)}}
+#dcUtilityModal.dc-settings-open #dcSettingsPasswordForm{display:grid;gap:6px}
+#dcUtilityModal.dc-settings-open #dcSettingsPasswordForm input{width:100%;margin:0}
+#dcUtilityModal.dc-settings-open .dc85b-admin-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:4px}
+#dcUtilityModal.dc-settings-open .dc85b-admin-tools button{padding:8px;min-height:42px;text-align:center}
+.dc-sessions-open{padding:8px 10px;cursor:pointer;border:1px solid var(--border-color,#64748b);border-radius:7px;background:var(--panel-bg,var(--card-bg));color:inherit}
+@media(max-width:1000px){#dcUtilityModal.dc-settings-open .dc-settings-grid{columns:2}}
+@media(max-width:670px){#dcUtilityModal.dc-settings-open .dc-settings-grid{columns:1}#dcUtilityModal.dc-settings-open .dc-utility-modal{padding:14px!important}#dcUtilityModal.dc-settings-open .dc-settings-actions{flex-wrap:wrap}#dcSettingsSaveStatus{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){.dc-config-saving:before,.dc-config-loading{animation:none}}
+
+/* Explicit columns keep External Services below Administration. */
+#dcUtilityModal.dc-settings-open .dc-utility-modal{width:min(1320px,96vw)!important;padding:14px!important;margin:12px auto!important;max-height:calc(100dvh - 24px)!important}
+#dcUtilityModal.dc-settings-open .dc-settings-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));columns:unset;gap:10px;align-items:start}
+#dcUtilityModal.dc-settings-open .dc-settings-column{min-width:0}
+#dcUtilityModal.dc-settings-open .dc-settings-group{margin-bottom:8px!important;padding:10px;font-size:13px;gap:6px}
+#dcUtilityModal.dc-settings-open .dc-settings-group h3{font-size:15px;margin:0 0 7px}
+#dcUtilityModal.dc-settings-open .dc-settings-group p{font-size:12px;line-height:1.35;margin:6px 0}
+#dcUtilityModal.dc-settings-open .dc-settings-group label{line-height:1.3}
+#dcUtilityModal.dc-settings-open #dcSettingsPasswordForm{gap:4px}
+#dcUtilityModal.dc-settings-open #dcSettingsPasswordForm input{padding:6px 9px;min-height:32px;height:32px}
+#dcUtilityModal.dc-settings-open #dcSettingsPasswordMessage:empty{display:none}
+#dcUtilityModal.dc-settings-open .dc85b-admin-tools{gap:6px}
+#dcUtilityModal.dc-settings-open .dc85b-admin-tools button{min-height:34px;padding:6px;font-size:12px}
+#dcUtilityModal.dc-settings-open #dcSettingsExternalCard button{width:100%;padding:7px;border:1px solid var(--border-color,#64748b);border-radius:6px;background:var(--hover-bg,#26354b);color:inherit;cursor:pointer}
+@media(max-height:740px) and (min-width:1051px){#dcUtilityModal.dc-settings-open .dc-settings-group{font-size:12px;padding:8px;margin-bottom:7px!important}#dcUtilityModal.dc-settings-open .dc-settings-group h3{font-size:14px;margin-bottom:5px}#dcUtilityModal.dc-settings-open #dcUtilityTitle{font-size:19px;margin-bottom:8px}#dcUtilityModal.dc-settings-open .dc-settings-actions{padding-top:8px}#dcUtilityModal.dc-settings-open .dc-settings-group input[type=number]{padding:5px;max-height:32px}}
+@media(max-width:1050px){#dcUtilityModal.dc-settings-open .dc-settings-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#dcUtilityModal.dc-settings-open .dc-settings-column:last-child{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+@media(max-width:670px){#dcUtilityModal.dc-settings-open .dc-settings-grid{grid-template-columns:1fr}#dcUtilityModal.dc-settings-open .dc-settings-column:last-child{grid-column:auto;display:block}}
+
+#dcUtilityModal.dc-settings-open .dc-utility-modal{max-width:min(1320px,96vw)!important}
+@media(max-height:740px) and (min-width:1051px){
+ #dcUtilityModal.dc-settings-open .dc-settings-group{gap:4px!important}
+ #dcUtilityModal.dc-settings-open #dcLocalPreviewSettings{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px;align-items:center}
+ #dcUtilityModal.dc-settings-open #dcLocalPreviewSettings>label:first-child{display:flex;align-items:center;gap:5px}
+ #dcUtilityModal.dc-settings-open #dcLocalPreviewSettings>label:nth-child(2){margin-left:0!important;white-space:nowrap;font-size:11px}
+ #dcUtilityModal.dc-settings-open #dcLocalPreviewSettings>div{grid-column:1/-1;margin-top:2px!important}
+ #dcUtilityModal.dc-settings-open #dcLocalPreviewSettings select{margin-left:4px!important;max-width:calc(100% - 98px);font-size:11px}
+ #dcUtilityModal.dc-settings-open #dcLocalPreviewSettings small{font-size:11px;line-height:1.25}
+ #dcUtilityModal.dc-settings-open .dc-settings-group:has(#dcThemeSetting)>div:last-child{margin-top:5px!important;padding:3px 0!important}
+ #dcUtilityModal.dc-settings-open .dc-settings-session p{line-height:1.25;font-size:11.5px}
+}

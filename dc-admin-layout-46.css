@@ -1,0 +1,37 @@
+/* Drive-Craft v20.10.46 - reacomodo fino del editor de usuarios */
+#dcUserEditor .dc-field-label{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  font-weight:600;
+  line-height:1.2;
+  min-height:18px;
+}
+#dcUserEditor .dc-field-label .dc-help{
+  display:inline-flex;
+  align-items:center;
+  margin:0;
+  font-size:.92em;
+}
+#dcUserEditor .dc-user-permissions-card{
+  padding-top:9px !important;
+}
+#dcUserEditor .dc-user-permissions-card .dc-check-list{
+  margin-top:0;
+}
+#dcUserEditor .dc-user-permissions-card h5{display:none !important}
+#dcUserEditor .dc-admin-note{
+  margin-top:5px !important;
+}
+#dcUserEditor .dc-admin-actions{
+  margin-top:0;
+}
+#dcUserEditor .dc-admin-actions button{
+  min-width:124px;
+}
+@media(max-width:760px){
+  #dcUserEditor .dc-field-label{min-height:auto;}
+}
+#dcUtilityModal.dc-admin-open .dc-utility-modal{
+    margin-top: 22px;
+}

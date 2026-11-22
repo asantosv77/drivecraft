@@ -1,0 +1,6 @@
+/* Cached preview dimensions reserve space before bytes arrive. */
+#dcAlbumArtCollage .dc-art-tile img{aspect-ratio:var(--dc-thumb-ratio,4/3);object-fit:cover}
+.dc-thumb-retry{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:9;max-width:90%;padding:7px 10px;border:1px solid #d5e0f0;border-radius:7px;background:#18283de8;color:#fff;cursor:pointer;font:inherit;font-size:12px}
+.dc-thumb-retry:focus-visible{outline:3px solid #38bdf8;outline-offset:2px}
+.dc-file-load-error{padding:20px;border:1px solid var(--border-color,#64748b);border-radius:10px}
+.dc-file-load-error button{margin-top:10px;cursor:pointer}

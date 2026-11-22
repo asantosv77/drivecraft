@@ -1,0 +1,17 @@
+/* v20.10.59: colores por extensión en el explorador, sin afectar favoritos ni selecciones */
+.file-name.dc-ext59-text{color:#75b9ef!important}
+.file-name.dc-ext59-code{color:#b69aff!important}
+.file-name.dc-ext59-config{color:#60c7b4!important}
+.file-name.dc-ext59-pdf{color:#ef8e89!important}
+.file-name.dc-ext59-archive{color:#d5a867!important}
+.file-name.dc-ext59-image{color:#b2d985!important}
+.file-name.dc-ext59-video{color:#d69bdf!important}
+.file-name.dc-ext59-audio{color:#e6ba84!important}
+body.light-mode .file-name.dc-ext59-text,[data-theme=light] .file-name.dc-ext59-text{color:#17699c!important}
+body.light-mode .file-name.dc-ext59-code,[data-theme=light] .file-name.dc-ext59-code{color:#7142ae!important}
+body.light-mode .file-name.dc-ext59-config,[data-theme=light] .file-name.dc-ext59-config{color:#008570!important}
+body.light-mode .file-name.dc-ext59-pdf,[data-theme=light] .file-name.dc-ext59-pdf{color:#b43c38!important}
+body.light-mode .file-name.dc-ext59-archive,[data-theme=light] .file-name.dc-ext59-archive{color:#98641c!important}
+body.light-mode .file-name.dc-ext59-image,[data-theme=light] .file-name.dc-ext59-image{color:#548014!important}
+body.light-mode .file-name.dc-ext59-video,[data-theme=light] .file-name.dc-ext59-video{color:#9651a0!important}
+body.light-mode .file-name.dc-ext59-audio,[data-theme=light] .file-name.dc-ext59-audio{color:#955f22!important}

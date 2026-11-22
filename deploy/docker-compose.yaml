@@ -1,0 +1,63 @@
+name: ${DC_PROJECT_NAME:-drivecraft-local}
+services:
+  db:
+    image: mariadb:11.4
+    platform: ${DC_PLATFORM:-linux/arm64}
+    restart: unless-stopped
+    environment:
+      TZ: ${DC_TIMEZONE:-America/Mexico_City}
+      MARIADB_DATABASE: drivecraft
+      MARIADB_USER: drivecraft
+      MARIADB_PASSWORD: ${DC_DB_PASSWORD:?Run the installer first}
+      MARIADB_ROOT_PASSWORD: ${DC_DB_ROOT_PASSWORD:?Run the installer first}
+    command: [--innodb-buffer-pool-size=128M, --max-connections=60]
+    volumes: [database:/var/lib/mysql]
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 5s
+      timeout: 5s
+      retries: 24
+      start_period: 20s
+    networks: [database]
+    security_opt: [no-new-privileges:true]
+    logging:
+      driver: json-file
+      options: {max-size: 5m, max-file: '2'}
+  app:
+    image: ${DC_IMAGE:-drivecraft-local:dev}
+    platform: ${DC_PLATFORM:-linux/arm64}
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+      args:
+        YTDLP_VERSION: ${DC_YTDLP_VERSION:-2026.10.26}
+    init: true
+    restart: unless-stopped
+    depends_on:
+      db: {condition: service_healthy}
+    environment:
+      TZ: ${DC_TIMEZONE:-America/Mexico_City}
+      DB_HOST: db
+      DB_NAME: drivecraft
+      DB_USER: drivecraft
+      DB_PASSWORD: ${DC_DB_PASSWORD:?Run the installer first}
+      DC_ADMIN_USER: ${DC_ADMIN_USER:-admin}
+      DC_ADMIN_PASSWORD: ${DC_ADMIN_PASSWORD:?Run the installer first}
+      DC_SESSION_COOKIE: DRIVECRAFT_LOCAL_SESSION
+      DC_COOKIE_SECURE: ${DC_COOKIE_SECURE:-0}
+      DC_REQUIRE_HARDLINKS: '1'
+    ports: ['${DC_BIND_ADDRESS:-127.0.0.1}:${DC_PORT:-8088}:8080']
+    volumes: [storage:/drive]
+    networks: [database, internet]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    stop_grace_period: 30s
+    logging:
+      driver: json-file
+      options: {max-size: 5m, max-file: '2'}
+volumes:
+  database:
+  storage:
+networks:
+  database: {internal: true}
+  internet:

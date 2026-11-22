@@ -1,0 +1,6 @@
+/* 85M: conservar menús comunes de 210 px, ampliar solo menús musicales */
+.dc-music-menu81{min-width:270px!important;max-width:min(320px,calc(100vw - 24px))!important;width:max-content!important;box-sizing:border-box}
+.dc-music-menu81 button{white-space:nowrap!important}
+.context-menu-drive a[hidden]{display:none!important}
+
+#dcClearRecents85m{margin-left:12px;padding:6px 10px;border:1px solid var(--border-color);border-radius:7px;background:var(--card-bg);color:var(--text-color);cursor:pointer}

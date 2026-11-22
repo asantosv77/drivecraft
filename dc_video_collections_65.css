@@ -1,0 +1,8 @@
+/* Drive-Craft 20.10.65: colecciones y portadas */
+.dc-collection-toolbar65{display:flex;justify-content:flex-end;margin:8px 0 12px;gap:8px}
+.dc-collection-toolbar65 button,.dc-collection-buttons65 button{font:inherit;border:1px solid #708ba477;border-radius:8px;padding:6px 9px;background:var(--panel-bg,#34465b);color:inherit;cursor:pointer}
+.dc-collection-poster65{height:190px;background:#1b2635;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:9px}
+.dc-collection-poster65 img{width:100%;height:100%;object-fit:cover}
+.dc-collection-buttons65{display:flex;flex-wrap:wrap;gap:5px;padding:8px}
+.dc-collection-buttons65 button{font-size:12px}
+.dc-collection-card65{min-width:0}

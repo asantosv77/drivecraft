@@ -1,0 +1,13 @@
+/* DC85f — pulido exclusivamente del tema claro. Sin alterar el tema oscuro. */
+:root[data-theme="light"]{--bg-color:#f3f6fb;--card-bg:#fff;--text-color:#192942;--border-color:#d8e2ef;--hover-bg:#edf3fb;--selected-bg:#e8f0ff;--primary-color:#057cc5}
+[data-theme="light"] .sidebar{background:#f3f6fb;border-right:1px solid #dce5f1}
+[data-theme="light"] .main-content{border:1px solid #dae4f0;box-shadow:0 5px 24px rgba(23,43,76,.075);background:#fff}
+[data-theme="light"] .dc85b-admin-tools button{background:#edf4ff;color:#193756;border-color:#b8cce4;font-weight:600}
+[data-theme="light"] .dc85b-admin-tools button:hover,[data-theme="light"] .dc85b-admin-tools button:focus-visible{background:#dceafb;border-color:#438ac1;filter:none}
+[data-theme="light"] .dc-collection-actions67 button,[data-theme="light"] .dc-video-actions84b button{background:#eaf2fc;color:#173a60;border:1px solid #bfd0e5}
+[data-theme="light"] .dc-collection-actions67 button:disabled,[data-theme="light"] .dc-video-actions84b button:disabled{background:#f0f4f9;color:#64748b;opacity:.65}
+[data-theme="light"] .dc-collection-folder67{box-shadow:0 2px 9px rgba(20,40,75,.1)}
+[data-theme="light"] .dc-collection-folder67 .dc-collection-ui67{color:#e8f1ff}
+[data-theme="light"] #viewerModal .dc-video-actions84b button{background:#eaf2fc;color:#173a60;border-color:#bdd0e5}
+[data-theme="light"] input:not([type="checkbox"]):not([type="radio"]),[data-theme="light"] select,[data-theme="light"] textarea{border-color:#cbd8e9}
+[data-theme="light"] input:focus-visible,[data-theme="light"] select:focus-visible,[data-theme="light"] textarea:focus-visible{outline:2px solid #5ca2d9;outline-offset:1px}

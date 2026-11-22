@@ -1,0 +1,11 @@
+/* Drive-Craft v20.6: indicadores de espacio y cuota */
+.dc-disk-status { margin-top:4px; max-width:100%; }
+.dc-usage-detail { margin-top:5px; font-size:11px; line-height:1.4; color:var(--text-color); opacity:.68; }
+.dc-usage-detail[hidden] { display:none !important; }
+.dc-usage-track { overflow:hidden; border-radius:999px; background:var(--border-color); height:7px; margin:5px 0 3px; }
+#dcUsageFill { width:0; height:100%; border-radius:999px; background:var(--primary-color); transition:width .25s ease; }
+#dcUsagePercent { text-align:right; font-variant-numeric:tabular-nums; }
+.dc-quota-controls { display:flex; align-items:center; gap:8px; margin-top:5px; }
+.dc-quota-controls input { flex:1; min-width:90px; }
+.dc-quota-controls select { width:82px; }
+#dcQuotaNote { display:block; opacity:.7; margin-top:4px; font-size:11px; }

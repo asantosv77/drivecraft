@@ -1,0 +1,12 @@
+.dc-markdown49{padding:20px 24px;line-height:1.65;overflow-wrap:anywhere;max-height:72vh;overflow-y:auto}
+.dc-markdown49 h1,.dc-markdown49 h2,.dc-markdown49 h3{margin:1em 0 .4em;font-weight:700}
+.dc-markdown49 h1{font-size:1.8em}.dc-markdown49 h2{font-size:1.45em}.dc-markdown49 h3{font-size:1.2em}
+.dc-markdown49 p{margin:.6em 0}.dc-markdown49 a{color:#7dc3ff;text-decoration:underline}
+.dc-markdown49 pre{padding:12px;overflow-x:auto;border-radius:8px;background:#111827;color:#e5e7eb}
+.dc-markdown49 code{background:rgba(127,127,127,.17);border-radius:4px;padding:2px 4px}
+.dc-markdown49 pre code{background:none;padding:0}
+.dc-markdown49 blockquote{border-left:3px solid #64748b;padding-left:12px;margin:12px 0;opacity:.92}
+.dc-markdown49 .dc-md-table-wrap{overflow-x:auto}.dc-markdown49 table{border-collapse:collapse;width:100%}
+.dc-markdown49 td,.dc-markdown49 th{padding:7px 10px;border:1px solid #64748b;text-align:left}
+.dc-markdown49 hr{border:0;border-top:1px solid #64748b}
+.dc-markdown49-switch{margin:0 0 10px 12px;padding:6px 12px;border-radius:7px;cursor:pointer}
